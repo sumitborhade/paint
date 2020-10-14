@@ -3,7 +3,7 @@ package com.example.graphics.factory;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.validation.Validation;
 import com.example.graphics.validation.impl.BucketValidation;
@@ -24,7 +24,7 @@ public class ValidationFactory {
 	
 	public static Validation getValidationEntity(String inputType) {
 		if (inputType == null) {
-			throw new CustomException(ExceptionCode.NULL_INPUT);
+			throw new CustomException(ApplicationStatusCode.NULL_INPUT);
 		}
 		
 		return validationEntitiesMap.get(inputType.toUpperCase());

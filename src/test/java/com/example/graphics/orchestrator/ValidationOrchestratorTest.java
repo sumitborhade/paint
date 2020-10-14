@@ -1,4 +1,4 @@
-package com.example.graphics.validation.impl;
+package com.example.graphics.orchestrator;
 
 import static org.junit.Assert.assertTrue;
 
@@ -8,7 +8,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.shape.service.impl.CanvasCreationService;
 
@@ -33,23 +33,23 @@ public class ValidationOrchestratorTest {
 	public void testTriggerValidationWhenInputIsNullThenExceptionShouldBeThrown() {
 		String inputString = null;
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.NULL_INPUT.getMessage());
-		validationOrchestrator.triggerValidation(inputString);
+		thrown.expectMessage(ApplicationStatusCode.NULL_INPUT.getMessage());
+		validationOrchestrator.performValidation(inputString);
 	}
 	
 	@Test
 	public void testTriggerValidationWhenInputIsIncorrectThenExceptionShouldBeThrown() {
 		String inputString = "P 1 2";
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.INCORRECT_DESIGN_TYPE.getMessage());
-		validationOrchestrator.triggerValidation(inputString);
+		thrown.expectMessage(ApplicationStatusCode.INCORRECT_DESIGN_TYPE.getMessage());
+		validationOrchestrator.performValidation(inputString);
 	}
 	
 	@Test
 	public void testTriggerValidationWhenInputIsCorrectForCanvasThenValidationShouldBeSuccessfully() {
 		String inputString = "C 100 80";
 		CanvasCreationService.destroyCanvas();
-		assertTrue(validationOrchestrator.triggerValidation(inputString));
+		assertTrue(validationOrchestrator.performValidation(inputString));
 	}
 
 }

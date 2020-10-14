@@ -7,11 +7,11 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.model.Point;
+import com.example.graphics.orchestrator.ShapeCreationOrchestrator;
 import com.example.graphics.shape.service.impl.CanvasCreationService;
-import com.example.graphics.shape.service.impl.ShapeCreationOrchestrator;
 
 public class GenericUtilsTest {
 
@@ -49,7 +49,7 @@ public class GenericUtilsTest {
 	@Test
 	public void testCheckWhenTheCanvasIsNullThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.CANVAS_NOT_PRESENT.getMessage());
+		thrown.expectMessage(ApplicationStatusCode.CANVAS_NOT_PRESENT.getMessage());
 		CanvasCreationService.destroyCanvas();
 		Point point = new Point(21, 5);
 		GenericUtils.checkIfThePointIsInsideCanvas(point);

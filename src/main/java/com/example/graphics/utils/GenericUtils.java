@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.model.Point;
 import com.example.graphics.shape.service.impl.CanvasCreationService;
@@ -57,7 +57,7 @@ public class GenericUtils {
 		String[][] canvas = CanvasCreationService.getCanvas();
 	
 		if(canvas == null) {
-			throw new CustomException(ExceptionCode.CANVAS_NOT_PRESENT);
+			throw new CustomException(ApplicationStatusCode.CANVAS_NOT_PRESENT);
 		}
 		
 		int canvasInternalWidth = canvas.length - 2;

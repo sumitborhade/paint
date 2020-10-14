@@ -6,10 +6,10 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 import com.example.graphics.exception.CustomException;
+import com.example.graphics.orchestrator.ShapeCreationOrchestrator;
 import com.example.graphics.shape.service.impl.CanvasCreationService;
-import com.example.graphics.shape.service.impl.ShapeCreationOrchestrator;
 import com.example.graphics.validation.Validation;
 
 public class LineValidationTest {
@@ -20,7 +20,7 @@ public class LineValidationTest {
 	@Test
 	public void testLineValidateWhenInputIsWithIncorrectNumberOfParametersThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.INCORRECT_LINE_INPUT_PARAMS.getMessage());
+		thrown.expectMessage(ApplicationStatusCode.INCORRECT_LINE_INPUT_PARAMS.getMessage());
 		String[] lineInputArray = "L 100".split(" ");
 		Validation lineValidation = new LineValidation();
 		lineValidation.validate(lineInputArray);
@@ -29,7 +29,7 @@ public class LineValidationTest {
 	@Test
 	public void testLineValidateWhenInputIsIncorrectThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.LINE_INPUT_SHOULD_BE_INTEGER.getMessage());
+		thrown.expectMessage(ApplicationStatusCode.LINE_INPUT_SHOULD_BE_INTEGER.getMessage());
 		String[] lineInputArray = "L 100 pp 200 20".split(" ");
 		Validation lineValidation = new LineValidation();
 		lineValidation.validate(lineInputArray);
@@ -38,7 +38,7 @@ public class LineValidationTest {
 	@Test
 	public void testLineValidateWhenInputWidthOrHeightIsIncorrectThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.INCORRECT_LINE_INPUT_VALUE.getMessage());
+		thrown.expectMessage(ApplicationStatusCode.INCORRECT_LINE_INPUT_VALUE.getMessage());
 		String[] lineInputArray = "L 0 0 200 20".split(" ");
 		Validation lineValidation = new LineValidation();
 		lineValidation.validate(lineInputArray);

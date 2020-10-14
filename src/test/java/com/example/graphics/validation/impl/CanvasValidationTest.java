@@ -6,7 +6,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.shape.service.impl.CanvasCreationService;
 import com.example.graphics.validation.Validation;
@@ -19,7 +19,7 @@ public class CanvasValidationTest {
 	@Test
 	public void testValidateWhenInputIsWithIncorrectNumberOfParametersThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.INCORRECT_CANVAS_INPUT_PARAMS.getMessage());
+		thrown.expectMessage(ApplicationStatusCode.INCORRECT_CANVAS_INPUT_PARAMS.getMessage());
 		String[] canvasInputArray = "C 100".split(" ");
 		CanvasCreationService.destroyCanvas();
 		Validation canvasValidation = new CanvasValidation();
@@ -29,7 +29,7 @@ public class CanvasValidationTest {
 	@Test
 	public void testValidateWhenInputWidthIsIncorrectThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.CANVAS_INPUT_SHOULD_BE_INTEGER.getMessage());
+		thrown.expectMessage(ApplicationStatusCode.CANVAS_INPUT_SHOULD_BE_INTEGER.getMessage());
 		String[] canvasInputArray = "C 100 pp".split(" ");
 		CanvasCreationService.destroyCanvas();
 		Validation canvasValidation = new CanvasValidation();
@@ -39,7 +39,7 @@ public class CanvasValidationTest {
 	@Test
 	public void testValidateWhenInputHeightIsIncorrectThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.CANVAS_INPUT_SHOULD_BE_INTEGER.getMessage());
+		thrown.expectMessage(ApplicationStatusCode.CANVAS_INPUT_SHOULD_BE_INTEGER.getMessage());
 		String[] canvasInputArray = "C pp 100".split(" ");
 		CanvasCreationService.destroyCanvas();
 		Validation canvasValidation = new CanvasValidation();
@@ -57,7 +57,7 @@ public class CanvasValidationTest {
 	@Test
 	public void testValidateWhenSecondCanvasIsCreatedThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.CANVAS_ALREADY_PRESENT.getMessage());
+		thrown.expectMessage(ApplicationStatusCode.CANVAS_ALREADY_PRESENT.getMessage());
 		
 		String[] canvasInputArray = "C 100 80".split(" ");
 		CanvasCreationService service = new CanvasCreationService();

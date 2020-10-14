@@ -1,6 +1,6 @@
 package com.example.graphics.exception;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 
 public class CustomException extends RuntimeException {
 
@@ -8,7 +8,7 @@ public class CustomException extends RuntimeException {
 
 	private String message;
 	
-	public CustomException(ExceptionCode exceptionCode) {
+	public CustomException(ApplicationStatusCode exceptionCode) {
 		this.message = exceptionCode.getMessage();
 	}
 

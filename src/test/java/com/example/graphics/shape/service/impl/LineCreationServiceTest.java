@@ -8,7 +8,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.shape.service.Shape;
 
@@ -32,7 +32,7 @@ public class LineCreationServiceTest {
 	@Test
 	public void testCreateShapeWhenLinePointsAreInvalidThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.INVALID_LINE_POINTS.getMessage());
+		thrown.expectMessage(ApplicationStatusCode.INVALID_LINE_POINTS.getMessage());
 		line.createShape("L 1 2 3 4".split(" "));
 	}
 	

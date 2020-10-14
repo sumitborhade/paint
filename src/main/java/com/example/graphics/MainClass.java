@@ -3,11 +3,14 @@ package com.example.graphics;
 import java.util.Scanner;
 
 import com.example.graphics.exception.CustomException;
-import com.example.graphics.shape.service.impl.ShapeCreationOrchestrator;
-import com.example.graphics.validation.impl.ValidationOrchestrator;
+import com.example.graphics.orchestrator.ShapeCreationOrchestrator;
+import com.example.graphics.orchestrator.ValidationOrchestrator;
 
+/**
+ * This is a entry point for Application.
+ */
 public class MainClass {
-
+	
 	public static void main(String[] args) {
 
 		try (Scanner scan = new Scanner(System.in)) {
@@ -24,7 +27,7 @@ public class MainClass {
 					
 					//1. Validation
 					ValidationOrchestrator validationOrchestrator = new ValidationOrchestrator();
-					validationOrchestrator.triggerValidation(inputString);
+					validationOrchestrator.performValidation(inputString);
 					
 					//2. Shape creation
 					ShapeCreationOrchestrator shapeCreationOrchestrator = new ShapeCreationOrchestrator();

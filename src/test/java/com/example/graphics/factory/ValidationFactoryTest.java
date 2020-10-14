@@ -4,7 +4,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 import com.example.graphics.exception.CustomException;
 
 public class ValidationFactoryTest {
@@ -15,7 +15,7 @@ public class ValidationFactoryTest {
 	@Test
 	public void testGetValidationEntityWhenInputTypeIsNullThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.NULL_INPUT.getMessage());
+		thrown.expectMessage(ApplicationStatusCode.NULL_INPUT.getMessage());
 		ValidationFactory.getValidationEntity(null);
 	}
 

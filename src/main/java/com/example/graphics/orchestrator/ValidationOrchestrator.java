@@ -1,16 +1,15 @@
-package com.example.graphics.validation.impl;
+package com.example.graphics.orchestrator;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.factory.ValidationFactory;
 import com.example.graphics.validation.Validation;
 
 public class ValidationOrchestrator {
 
-	public boolean triggerValidation(String inputString) {
-		
+	public boolean performValidation(String inputString) {
 		if (inputString == null) {
-			throw new CustomException(ExceptionCode.NULL_INPUT);
+			throw new CustomException(ApplicationStatusCode.NULL_INPUT);
 		}
 		
 		String[] inputArray = inputString.split(" ");
@@ -18,7 +17,7 @@ public class ValidationOrchestrator {
 		Validation validation = ValidationFactory.getValidationEntity(inputArray[0]);
 		
 		if(validation == null) {
-			throw new CustomException(ExceptionCode.INCORRECT_DESIGN_TYPE);
+			throw new CustomException(ApplicationStatusCode.INCORRECT_DESIGN_TYPE);
 		}
 		
 		validation.validate(inputArray);

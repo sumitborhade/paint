@@ -8,7 +8,7 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.shape.service.impl.CanvasCreationService;
 
@@ -23,7 +23,7 @@ public class CanvasServiceImplTest {
 				canvasCreationService.createCanvas(0, 4);
 			}
 		} catch (CustomException e) {
-			assertEquals(ExceptionCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage(), e.getMessage());
+			assertEquals(ApplicationStatusCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage(), e.getMessage());
 		}
 	}
 	
@@ -35,7 +35,7 @@ public class CanvasServiceImplTest {
 				canvasCreationService.createCanvas(10, 0);
 			}
 		} catch (CustomException e) {
-			assertEquals(ExceptionCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage(), e.getMessage());
+			assertEquals(ApplicationStatusCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage(), e.getMessage());
 		}
 	}
 	
@@ -46,7 +46,7 @@ public class CanvasServiceImplTest {
 			CanvasCreationService canvasCreationService = new CanvasCreationService();
 			canvasCreationService.createCanvas(10, 0);
 		} catch (CustomException e) {
-			assertEquals(ExceptionCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage(), e.getMessage());
+			assertEquals(ApplicationStatusCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage(), e.getMessage());
 		}
 	}
 	
@@ -57,7 +57,7 @@ public class CanvasServiceImplTest {
 			CanvasCreationService canvasCreationService = new CanvasCreationService();
 			canvasCreationService.createCanvas(0, 0);
 		} catch (CustomException e) {
-			assertEquals(ExceptionCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage(), e.getMessage());
+			assertEquals(ApplicationStatusCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage(), e.getMessage());
 		}
 	}
 	
@@ -78,7 +78,7 @@ public class CanvasServiceImplTest {
 			CanvasCreationService canvasCreationService = new CanvasCreationService();
 			canvasCreationService.createCanvas(20, 4);
 		} catch (CustomException e) {
-			assertEquals(ExceptionCode.CANVAS_ALREADY_PRESENT.getMessage(), e.getMessage());
+			assertEquals(ApplicationStatusCode.CANVAS_ALREADY_PRESENT.getMessage(), e.getMessage());
 		}
 	}
 	

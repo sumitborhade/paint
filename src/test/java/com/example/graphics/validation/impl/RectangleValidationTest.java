@@ -8,7 +8,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.validation.Validation;
 
@@ -32,7 +32,7 @@ public class RectangleValidationTest {
 	@Test
 	public void testRectangleValidateWhenInputIsWithIncorrectNumberOfParametersThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.INCORRECT_RECTANGLE_INPUT_PARAMS.getMessage());
+		thrown.expectMessage(ApplicationStatusCode.INCORRECT_RECTANGLE_INPUT_PARAMS.getMessage());
 		String[] rectangleInputArray = "L 100".split(" ");
 		rectangleValidation.validate(rectangleInputArray);
 	}
@@ -40,7 +40,7 @@ public class RectangleValidationTest {
 	@Test
 	public void testRectangleValidateWhenInputIsIncorrectThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ExceptionCode.RECTANGLE_INPUT_SHOULD_BE_INTEGER.getMessage());
+		thrown.expectMessage(ApplicationStatusCode.RECTANGLE_INPUT_SHOULD_BE_INTEGER.getMessage());
 		String[] rectangleInputArray = "L 100 pp 200 20".split(" ");
 		rectangleValidation.validate(rectangleInputArray);
 	}

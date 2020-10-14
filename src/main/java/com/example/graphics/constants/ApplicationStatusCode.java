@@ -1,6 +1,6 @@
 package com.example.graphics.constants;
 
-public enum ExceptionCode {
+public enum ApplicationStatusCode {
 	
 	NULL_INPUT("The input is null"),
 	INCORRECT_DESIGN_TYPE("Design type entered is incorrect."),
@@ -18,13 +18,15 @@ public enum ExceptionCode {
 	//Rectangle
 	INCORRECT_RECTANGLE_INPUT_PARAMS("# of Input params Rectangle should be 5."),
 	RECTANGLE_INPUT_SHOULD_BE_INTEGER("2nd, 3rd, 4th and 5th params of a Rectangle should be integer."),
+	INCORRECT_RECTANGLE_INPUT_VALUE("X & Y co-ordinates for all points of Rectangle should be great than 1."),
+	RECTANGLE_CO_ORDS_OUT_OF_CANVAS("At least one of the Rectangle points is out of canvas."),
 	//Bucket fill
 	INCORRECT_BUCKET_INPUT_PARAMS("# of Input params Bucket should be 4."),
-	BUCKET_INPUT_SHOULD_BE_INTEGER("2nd and 3rd params of a Bucket should be integer.");
+	BUCKET_INPUT_SHOULD_BE_INTEGER("2nd and 3rd params of a Bucket should be integer."); 
 	
 	private String message;
 	
-	private ExceptionCode(String message) {
+	private ApplicationStatusCode(String message) {
 		this.message = message;
 	}
 

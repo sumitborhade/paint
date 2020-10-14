@@ -1,6 +1,6 @@
 package com.example.graphics.shape.service.impl;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.model.Point;
 import com.example.graphics.shape.service.Shape;
@@ -16,7 +16,7 @@ public class LineCreationService implements Shape {
 		
 		if (startPoint.getX() != endPoint.getX() && startPoint.getY() != endPoint.getY()) {
 			isLineCreated = false;
-			throw new CustomException(ExceptionCode.INVALID_LINE_POINTS);
+			throw new CustomException(ApplicationStatusCode.INVALID_LINE_POINTS);
 		}
 		
 		String[][] canvas = CanvasCreationService.getCanvas();

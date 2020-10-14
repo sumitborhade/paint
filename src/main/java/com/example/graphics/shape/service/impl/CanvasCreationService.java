@@ -1,6 +1,6 @@
 package com.example.graphics.shape.service.impl;
 
-import com.example.graphics.constants.ExceptionCode;
+import com.example.graphics.constants.ApplicationStatusCode;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.shape.service.Shape;
 import com.example.graphics.utils.GenericUtils;
@@ -17,7 +17,7 @@ public class CanvasCreationService implements Shape {
 				if (canvas == null) {
 					wasCanvasPresentEarlier = false;
 					if (GenericUtils.isValueLessThanOne(width, height)) {
-						throw new CustomException(ExceptionCode.INCORRECT_CANVAS_INPUT_VALUE);
+						throw new CustomException(ApplicationStatusCode.INCORRECT_CANVAS_INPUT_VALUE);
 					} else {
 						width = width + 2;
 						height = height + 2;
@@ -40,7 +40,7 @@ public class CanvasCreationService implements Shape {
 		}
 
 		if (wasCanvasPresentEarlier) {
-			throw new CustomException(ExceptionCode.CANVAS_ALREADY_PRESENT);
+			throw new CustomException(ApplicationStatusCode.CANVAS_ALREADY_PRESENT);
 		}
 		
 		return true;
