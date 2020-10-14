@@ -9,12 +9,13 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationStatusCode;
+import com.example.graphics.creator.service.Validator;
 import com.example.graphics.exception.CustomException;
-import com.example.graphics.validation.Validation;
+import com.example.graphics.validator.service.impl.BucketValidation;
 
 public class BucketValidationTest {
 
-	private Validation bucketValidation;
+	private Validator bucketValidation;
 	
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();

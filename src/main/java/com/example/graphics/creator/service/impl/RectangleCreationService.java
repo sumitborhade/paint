@@ -1,9 +1,9 @@
-package com.example.graphics.shape.service.impl;
+package com.example.graphics.creator.service.impl;
 
+import com.example.graphics.creator.service.ShapeCreator;
 import com.example.graphics.model.Point;
-import com.example.graphics.shape.service.Shape;
 
-public class RectangleCreationService implements Shape {
+public class RectangleCreationService implements ShapeCreator {
 
 	@Override
 	public boolean createShape(String[] inputArray) {
@@ -13,7 +13,7 @@ public class RectangleCreationService implements Shape {
 		Point upperRightPoint = new Point(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[2]));
 		Point lowerLeftPoint = new Point(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[4]));
 		
-		Shape line = new LineCreationService();
+		ShapeCreator line = new LineCreationService();
 		
 		String upperHorizontalLine = "L " + upperLeftPoint.getX() + " " + upperLeftPoint.getY() + " "
 				+ upperRightPoint.getX() + " " + upperRightPoint.getY();

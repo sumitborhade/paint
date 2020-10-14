@@ -1,12 +1,12 @@
-package com.example.graphics.validation.impl;
+package com.example.graphics.validator.service.impl;
 
 import com.example.graphics.constants.ApplicationStatusCode;
+import com.example.graphics.creator.service.Validator;
+import com.example.graphics.creator.service.impl.CanvasCreationService;
 import com.example.graphics.exception.CustomException;
-import com.example.graphics.shape.service.impl.CanvasCreationService;
 import com.example.graphics.utils.GenericUtils;
-import com.example.graphics.validation.Validation;
 
-public class CanvasValidation implements Validation {
+public class CanvasValidation implements Validator {
 
 	@Override
 	public boolean validate(String[] inputArray) {

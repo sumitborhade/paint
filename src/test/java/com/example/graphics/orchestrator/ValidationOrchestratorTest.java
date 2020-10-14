@@ -9,8 +9,8 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationStatusCode;
+import com.example.graphics.creator.service.impl.CanvasCreationService;
 import com.example.graphics.exception.CustomException;
-import com.example.graphics.shape.service.impl.CanvasCreationService;
 
 public class ValidationOrchestratorTest {
 

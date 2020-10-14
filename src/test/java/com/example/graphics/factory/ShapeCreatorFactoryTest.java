@@ -7,9 +7,9 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationStatusCode;
+import com.example.graphics.creator.service.ShapeCreator;
+import com.example.graphics.creator.service.impl.CanvasCreationService;
 import com.example.graphics.exception.CustomException;
-import com.example.graphics.shape.service.Shape;
-import com.example.graphics.shape.service.impl.CanvasCreationService;
 
 public class ShapeCreatorFactoryTest {
 
@@ -25,7 +25,7 @@ public class ShapeCreatorFactoryTest {
 	
 	@Test
 	public void testGetShapeEntityWhenInputTypeIsCThenCanvasShouldBeReturned() {
-		Shape canvasShape = ShapeCreatorFactory.getShapeEntity("c");
+		ShapeCreator canvasShape = ShapeCreatorFactory.getShapeEntity("c");
 		assertTrue("In this test, shape should be of type canvas", canvasShape instanceof CanvasCreationService);
 	}
 

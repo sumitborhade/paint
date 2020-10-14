@@ -9,12 +9,14 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationStatusCode;
+import com.example.graphics.creator.service.Validator;
+import com.example.graphics.creator.service.impl.CanvasCreationService;
 import com.example.graphics.exception.CustomException;
-import com.example.graphics.validation.Validation;
+import com.example.graphics.validator.service.impl.RectangleValidation;
 
 public class RectangleValidationTest {
 
-	private Validation rectangleValidation;
+	private Validator rectangleValidation;
 	
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
@@ -46,8 +48,27 @@ public class RectangleValidationTest {
 	}
 	
 	@Test
+	public void testRectangleValidateWhenPointCoordinatesAreZeroThenExceptionShouldBeThrown() {
+		thrown.expect(CustomException.class);
+		thrown.expectMessage(ApplicationStatusCode.INCORRECT_RECTANGLE_INPUT_VALUE.getMessage());
+		String[] rectangleInputArray = "L 0 0 200 20".split(" ");
+		rectangleValidation.validate(rectangleInputArray);
+	}
+	
+	@Test
+	public void testRectangleValidateWhenPointIsOutsideCanvasThenExceptionShouldBeThrown() {
+		thrown.expect(CustomException.class);
+		thrown.expectMessage(ApplicationStatusCode.RECTANGLE_CO_ORDS_OUT_OF_CANVAS.getMessage());
+		String[] rectangleInputArray = "L 1 1 200 20".split(" ");
+		rectangleValidation.validate(rectangleInputArray);
+	}
+	
+	@Test
 	public void testRectangleValidateWhenInputIsCorrectThenValidationShouldBeSucessful() {
-		String[] rectangleInputArray = "L 100 80 200 80".split(" ");
+		CanvasCreationService.destroyCanvas();
+		CanvasCreationService canvasCreationService = new CanvasCreationService();
+		canvasCreationService.createCanvas(20, 4);
+		String[] rectangleInputArray = "L 16 3 18 4".split(" ");
 		assertTrue("Rectangle validation should be successful.", rectangleValidation.validate(rectangleInputArray));
 	}
 

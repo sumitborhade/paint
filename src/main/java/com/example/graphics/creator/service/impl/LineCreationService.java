@@ -1,11 +1,11 @@
-package com.example.graphics.shape.service.impl;
+package com.example.graphics.creator.service.impl;
 
 import com.example.graphics.constants.ApplicationStatusCode;
+import com.example.graphics.creator.service.ShapeCreator;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.model.Point;
-import com.example.graphics.shape.service.Shape;
 
-public class LineCreationService implements Shape {
+public class LineCreationService implements ShapeCreator {
 
 	@Override
 	public boolean createShape(String[] inputArray) {

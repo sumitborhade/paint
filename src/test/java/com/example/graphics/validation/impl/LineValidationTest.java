@@ -7,10 +7,11 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationStatusCode;
+import com.example.graphics.creator.service.Validator;
+import com.example.graphics.creator.service.impl.CanvasCreationService;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.orchestrator.ShapeCreationOrchestrator;
-import com.example.graphics.shape.service.impl.CanvasCreationService;
-import com.example.graphics.validation.Validation;
+import com.example.graphics.validator.service.impl.LineValidation;
 
 public class LineValidationTest {
 
@@ -22,7 +23,7 @@ public class LineValidationTest {
 		thrown.expect(CustomException.class);
 		thrown.expectMessage(ApplicationStatusCode.INCORRECT_LINE_INPUT_PARAMS.getMessage());
 		String[] lineInputArray = "L 100".split(" ");
-		Validation lineValidation = new LineValidation();
+		Validator lineValidation = new LineValidation();
 		lineValidation.validate(lineInputArray);
 	}
 	
@@ -31,7 +32,7 @@ public class LineValidationTest {
 		thrown.expect(CustomException.class);
 		thrown.expectMessage(ApplicationStatusCode.LINE_INPUT_SHOULD_BE_INTEGER.getMessage());
 		String[] lineInputArray = "L 100 pp 200 20".split(" ");
-		Validation lineValidation = new LineValidation();
+		Validator lineValidation = new LineValidation();
 		lineValidation.validate(lineInputArray);
 	}
 	
@@ -40,7 +41,7 @@ public class LineValidationTest {
 		thrown.expect(CustomException.class);
 		thrown.expectMessage(ApplicationStatusCode.INCORRECT_LINE_INPUT_VALUE.getMessage());
 		String[] lineInputArray = "L 0 0 200 20".split(" ");
-		Validation lineValidation = new LineValidation();
+		Validator lineValidation = new LineValidation();
 		lineValidation.validate(lineInputArray);
 	}
 	
@@ -51,7 +52,7 @@ public class LineValidationTest {
 			shapeCreationOrchestrator.createShape("C 20 4");
 		}
 		String[] lineInputArray = "L 2 2 8 2".split(" ");
-		Validation lineValidation = new LineValidation();
+		Validator lineValidation = new LineValidation();
 		assertTrue("Line validation should be successful.", lineValidation.validate(lineInputArray));
 	}
 

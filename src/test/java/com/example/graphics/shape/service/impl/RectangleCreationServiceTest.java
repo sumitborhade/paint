@@ -8,11 +8,13 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.example.graphics.shape.service.Shape;
+import com.example.graphics.creator.service.ShapeCreator;
+import com.example.graphics.creator.service.impl.CanvasCreationService;
+import com.example.graphics.creator.service.impl.RectangleCreationService;
 
 public class RectangleCreationServiceTest {
 
-	private Shape rectangle;
+	private ShapeCreator rectangle;
 	
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
@@ -30,7 +32,7 @@ public class RectangleCreationServiceTest {
 	@Test
 	public void testCreateShapeWhenLinePointsAreValidThenMethodShouldReturnTrue() {
 		CanvasCreationService.destroyCanvas();
-		Shape canvas = new CanvasCreationService();
+		ShapeCreator canvas = new CanvasCreationService();
 		canvas.createShape("C 20 4".split(" "));
 		assertTrue("Rectangle should be created.", rectangle.createShape("R 14 1 18 3".split(" ")));
 	}
