@@ -26,11 +26,11 @@ public class CanvasCreationService implements Shape {
 						for (int j = 0; j < height; j++) {
 							for (int i = 0; i < width; i++) {
 								if (j == 0 || j == (height - 1)) {
-									canvas[i][j] = "-\t";
+									canvas[i][j] = "-";
 								} else if (i == 0 || i == (width - 1)) {
-									canvas[i][j] = "|\t";
+									canvas[i][j] = "|";
 								} else {
-									canvas[i][j] = /* i + "," + j + */ "\t";
+									canvas[i][j] = /* i + "," + j + */ " ";
 								}
 							}
 						}
@@ -47,7 +47,7 @@ public class CanvasCreationService implements Shape {
 	}
 
 	public static String[][] getCanvas() {
-		return canvas;
+		return (canvas != null) ? canvas.clone() : canvas;
 	}
 
 	public static boolean printCanvas() {

@@ -20,9 +20,10 @@ public class LineCreationService implements Shape {
 		}
 		
 		String[][] canvas = CanvasCreationService.getCanvas();
+		
 		for (int counterY = startPoint.getX(); counterY <= endPoint.getX(); counterY++) {
 			for (int counterX = startPoint.getY(); counterX <= endPoint.getY(); counterX++) {
-				canvas[counterY][counterX] = "x\t";
+				canvas[counterY][counterX] = "x";
 			}
 		}
 		
