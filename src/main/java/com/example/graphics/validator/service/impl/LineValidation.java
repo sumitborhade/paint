@@ -1,10 +1,10 @@
 package com.example.graphics.validator.service.impl;
 
 import com.example.graphics.constants.ApplicationWarningCode;
-import com.example.graphics.creator.service.Validator;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.model.Point;
 import com.example.graphics.utils.GenericUtils;
+import com.example.graphics.validator.service.Validator;
 
 public class LineValidation implements Validator {
 

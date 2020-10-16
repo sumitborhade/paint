@@ -7,9 +7,9 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationWarningCode;
-import com.example.graphics.creator.service.Validator;
 import com.example.graphics.creator.service.impl.CanvasCreationService;
 import com.example.graphics.exception.CustomException;
+import com.example.graphics.validator.service.Validator;
 import com.example.graphics.validator.service.impl.CanvasValidation;
 
 public class CanvasValidationTest {
