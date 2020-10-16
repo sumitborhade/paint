@@ -1,6 +1,6 @@
 package com.example.graphics.validator.service.impl;
 
-import com.example.graphics.constants.ApplicationStatusCode;
+import com.example.graphics.constants.ApplicationWarningCode;
 import com.example.graphics.creator.service.Validator;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.model.Point;
@@ -23,19 +23,19 @@ public class LineValidation implements Validator {
 
 	private void validateIfNumberOfParamsAreCorrect(String[] inputArray) {
 		if (inputArray.length != 5) {
-			throw new CustomException(ApplicationStatusCode.INCORRECT_LINE_INPUT_PARAMS);
+			throw new CustomException(ApplicationWarningCode.INCORRECT_LINE_INPUT_PARAMS);
 		}
 	}
 
 	private void validateIfThePointsAreInteger(String[] inputArray) {
 		if (!GenericUtils.isInteger(inputArray[1], inputArray[2], inputArray[3], inputArray[4])) {
-			throw new CustomException(ApplicationStatusCode.LINE_INPUT_SHOULD_BE_INTEGER);
+			throw new CustomException(ApplicationWarningCode.LINE_INPUT_SHOULD_BE_INTEGER);
 		}
 	}
 	
 	private void validateIfThePointsCoordinatesAreGreaterThanZero(String[] inputArray) {
 		if(GenericUtils.isStringValueLessThanOne(inputArray[1], inputArray[2], inputArray[3], inputArray[4])) {
-			throw new CustomException(ApplicationStatusCode.INCORRECT_LINE_INPUT_VALUE);
+			throw new CustomException(ApplicationWarningCode.INCORRECT_LINE_INPUT_VALUE);
 		}
 	}
 	

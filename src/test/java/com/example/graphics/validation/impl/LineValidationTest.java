@@ -6,7 +6,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.example.graphics.constants.ApplicationStatusCode;
+import com.example.graphics.constants.ApplicationWarningCode;
 import com.example.graphics.creator.service.Validator;
 import com.example.graphics.creator.service.impl.CanvasCreationService;
 import com.example.graphics.exception.CustomException;
@@ -21,7 +21,7 @@ public class LineValidationTest {
 	@Test
 	public void testLineValidateWhenInputIsWithIncorrectNumberOfParametersThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationStatusCode.INCORRECT_LINE_INPUT_PARAMS.getMessage());
+		thrown.expectMessage(ApplicationWarningCode.INCORRECT_LINE_INPUT_PARAMS.getMessage());
 		String[] lineInputArray = "L 100".split(" ");
 		Validator lineValidation = new LineValidation();
 		lineValidation.validate(lineInputArray);
@@ -30,7 +30,7 @@ public class LineValidationTest {
 	@Test
 	public void testLineValidateWhenInputIsIncorrectThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationStatusCode.LINE_INPUT_SHOULD_BE_INTEGER.getMessage());
+		thrown.expectMessage(ApplicationWarningCode.LINE_INPUT_SHOULD_BE_INTEGER.getMessage());
 		String[] lineInputArray = "L 100 pp 200 20".split(" ");
 		Validator lineValidation = new LineValidation();
 		lineValidation.validate(lineInputArray);
@@ -39,7 +39,7 @@ public class LineValidationTest {
 	@Test
 	public void testLineValidateWhenInputWidthOrHeightIsIncorrectThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationStatusCode.INCORRECT_LINE_INPUT_VALUE.getMessage());
+		thrown.expectMessage(ApplicationWarningCode.INCORRECT_LINE_INPUT_VALUE.getMessage());
 		String[] lineInputArray = "L 0 0 200 20".split(" ");
 		Validator lineValidation = new LineValidation();
 		lineValidation.validate(lineInputArray);

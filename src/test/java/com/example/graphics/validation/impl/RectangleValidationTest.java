@@ -8,7 +8,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.example.graphics.constants.ApplicationStatusCode;
+import com.example.graphics.constants.ApplicationWarningCode;
 import com.example.graphics.creator.service.Validator;
 import com.example.graphics.creator.service.impl.CanvasCreationService;
 import com.example.graphics.exception.CustomException;
@@ -34,7 +34,7 @@ public class RectangleValidationTest {
 	@Test
 	public void testRectangleValidateWhenInputIsWithIncorrectNumberOfParametersThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationStatusCode.INCORRECT_RECTANGLE_INPUT_PARAMS.getMessage());
+		thrown.expectMessage(ApplicationWarningCode.INCORRECT_RECTANGLE_INPUT_PARAMS.getMessage());
 		String[] rectangleInputArray = "L 100".split(" ");
 		rectangleValidation.validate(rectangleInputArray);
 	}
@@ -42,7 +42,7 @@ public class RectangleValidationTest {
 	@Test
 	public void testRectangleValidateWhenInputIsIncorrectThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationStatusCode.RECTANGLE_INPUT_SHOULD_BE_INTEGER.getMessage());
+		thrown.expectMessage(ApplicationWarningCode.RECTANGLE_INPUT_SHOULD_BE_INTEGER.getMessage());
 		String[] rectangleInputArray = "L 100 pp 200 20".split(" ");
 		rectangleValidation.validate(rectangleInputArray);
 	}
@@ -50,7 +50,7 @@ public class RectangleValidationTest {
 	@Test
 	public void testRectangleValidateWhenPointCoordinatesAreZeroThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationStatusCode.INCORRECT_RECTANGLE_INPUT_VALUE.getMessage());
+		thrown.expectMessage(ApplicationWarningCode.INCORRECT_RECTANGLE_INPUT_VALUE.getMessage());
 		String[] rectangleInputArray = "L 0 0 200 20".split(" ");
 		rectangleValidation.validate(rectangleInputArray);
 	}
@@ -58,7 +58,7 @@ public class RectangleValidationTest {
 	@Test
 	public void testRectangleValidateWhenPointIsOutsideCanvasThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationStatusCode.RECTANGLE_CO_ORDS_OUT_OF_CANVAS.getMessage());
+		thrown.expectMessage(ApplicationWarningCode.RECTANGLE_CO_ORDS_OUT_OF_CANVAS.getMessage());
 		String[] rectangleInputArray = "L 1 1 200 20".split(" ");
 		rectangleValidation.validate(rectangleInputArray);
 	}

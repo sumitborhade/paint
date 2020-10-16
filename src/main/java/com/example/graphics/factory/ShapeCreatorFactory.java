@@ -3,7 +3,7 @@ package com.example.graphics.factory;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.graphics.constants.ApplicationStatusCode;
+import com.example.graphics.constants.ApplicationWarningCode;
 import com.example.graphics.creator.service.ShapeCreator;
 import com.example.graphics.creator.service.impl.CanvasCreationService;
 import com.example.graphics.creator.service.impl.LineCreationService;
@@ -24,7 +24,7 @@ public class ShapeCreatorFactory {
 	
 	public static ShapeCreator getShapeEntity(String inputType) {
 		if (inputType == null) {
-			throw new CustomException(ApplicationStatusCode.NULL_INPUT);
+			throw new CustomException(ApplicationWarningCode.NULL_INPUT);
 		}
 		
 		return validationEntitiesMap.get(inputType.toUpperCase());
