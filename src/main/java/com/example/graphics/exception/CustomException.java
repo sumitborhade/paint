@@ -8,8 +8,8 @@ public class CustomException extends RuntimeException {
 
 	private String message;
 	
-	public CustomException(ApplicationWarningCode exceptionCode) {
-		this.message = exceptionCode.getMessage();
+	public CustomException(ApplicationWarningCode applicationWarningCode) {
+		this.message = applicationWarningCode.getMessage();
 	}
 
 	@Override

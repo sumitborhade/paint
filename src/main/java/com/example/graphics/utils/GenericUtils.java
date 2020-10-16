@@ -19,6 +19,10 @@ public class GenericUtils {
 			Pattern pattern = Pattern.compile("-?\\d+(\\.\\d+)?");
 
 			for (String stringNumber : stringNumbers) {
+				if(stringNumber == null) {
+					throw new CustomException(ApplicationWarningCode.NULL_INPUT);
+				}
+				
 				isInteger = pattern.matcher(stringNumber).matches();
 				
 				if(!isInteger) {
@@ -40,7 +44,7 @@ public class GenericUtils {
 		}
 		
 		String s = intValuesLessThanOneList.stream().map(Object::toString).collect(Collectors.joining(", "));
-		if(s != null && !s.trim().equals("")) {
+		if(!s.trim().equals("")) {
 			System.out.println("Values less than 1 are " + s);
 		}
 		return intValuesLessThanOneList.size() > 0;
@@ -70,7 +74,7 @@ public class GenericUtils {
 			int pointX = point.getX();
 			int pointY = point.getY();
 			
-			if(pointX > canvasInternalWidth || pointY > canvasInternalHeight) {
+			if (pointX <= 0 || pointY <= 0 || pointX > canvasInternalWidth || pointY > canvasInternalHeight) {
 				isPointInsideCanvas = false;
 				System.out.println(point + " is outside of canvas.");
 				break;

@@ -32,7 +32,8 @@ public enum ApplicationWarningCode {
 	
 	//Bucket fill
 	INCORRECT_BUCKET_INPUT_PARAMS("# of Input params Bucket should be 4."),
-	BUCKET_INPUT_SHOULD_BE_INTEGER("2nd and 3rd params of a Bucket should be integer."); 
+	BUCKET_INPUT_SHOULD_BE_INTEGER("2nd and 3rd params of a Bucket should be integer."),
+	BUCKET_FILL_POINT_IS_OUTSIDE_OR_ON_CANVAS("Bucket fill point should be within canvas."); 
 	
 	private String message;
 	

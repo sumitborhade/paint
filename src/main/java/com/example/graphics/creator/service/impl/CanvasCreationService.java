@@ -47,7 +47,7 @@ public class CanvasCreationService implements ShapeCreator {
 	}
 
 	public static String[][] getCanvas() {
-		return (canvas != null) ? canvas.clone() : canvas;
+		return canvas;
 	}
 
 	public static boolean printCanvas() {

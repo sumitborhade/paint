@@ -50,7 +50,7 @@ public class RectangleValidationTest {
 	@Test
 	public void testRectangleValidateWhenPointCoordinatesAreZeroThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.INCORRECT_RECTANGLE_INPUT_VALUE.getMessage());
+		thrown.expectMessage(ApplicationWarningCode.RECTANGLE_CO_ORDS_OUT_OF_CANVAS.getMessage());
 		String[] rectangleInputArray = "L 0 0 200 20".split(" ");
 		rectangleValidation.validate(rectangleInputArray);
 	}

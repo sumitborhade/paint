@@ -27,12 +27,12 @@ public class RectangleCreationService implements ShapeCreator {
 		String rightVerticalLine = "L " + upperRightPoint.getX() + " " + upperRightPoint.getY() + " "
 				+ lowerRightPoint.getX() + " " + lowerRightPoint.getY();
 		
-		boolean isUpperHorizontalLineCreated = line.createShape(upperHorizontalLine.split(" "));
-		boolean isLowerHorizontalLine = line.createShape(lowerHorizontalLine.split(" "));
-		boolean isLeftVerticalLineCreated = line.createShape(leftVerticalLine.split(" "));
-		boolean isRightVerticalLineCreated = line.createShape(rightVerticalLine.split(" "));
+		line.createShape(upperHorizontalLine.split(" "));
+		line.createShape(lowerHorizontalLine.split(" "));
+		line.createShape(leftVerticalLine.split(" "));
+		line.createShape(rightVerticalLine.split(" "));
 		
-		return (isUpperHorizontalLineCreated && isLowerHorizontalLine && isLeftVerticalLineCreated && isRightVerticalLineCreated);
+		return true;
 	}
 
 }
