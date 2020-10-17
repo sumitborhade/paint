@@ -2,21 +2,35 @@ package com.example.graphics.validator.service.impl;
 
 import static org.junit.Assert.assertTrue;
 
+import org.junit.After;
+import org.junit.Before;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationWarningCode;
-import com.example.graphics.creator.service.impl.CanvasCreationService;
+import com.example.graphics.creator.service.ShapeCreator;
+import com.example.graphics.creator.service.impl.CanvasService;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.orchestrator.ShapeCreationOrchestrator;
 import com.example.graphics.validator.service.Validator;
-import com.example.graphics.validator.service.impl.LineValidation;
 
 public class LineValidationTest {
 
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
+	
+	@Before
+	public void setUp() throws Exception {
+		CanvasService.destroyCanvas();
+		ShapeCreator canvasCreator = new CanvasService();
+		canvasCreator.createShape("C 20 4".split(" "));
+	}
+
+	@After
+	public void tearDown() throws Exception {
+		CanvasService.destroyCanvas();
+	}
 	
 	@Test
 	public void testLineValidateWhenInputIsWithIncorrectNumberOfParametersThenExceptionShouldBeThrown() {
@@ -39,7 +53,7 @@ public class LineValidationTest {
 	@Test
 	public void testLineValidateWhenInputWidthOrHeightIsIncorrectThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.INCORRECT_LINE_INPUT_VALUE.getMessage());
+		thrown.expectMessage(ApplicationWarningCode.LINE_COORDINATE_OUT_OF_CANVAS.getMessage());
 		String[] lineInputArray = "L 0 0 200 20".split(" ");
 		Validator lineValidation = new LineValidation();
 		lineValidation.validate(lineInputArray);
@@ -47,7 +61,7 @@ public class LineValidationTest {
 	
 	@Test
 	public void testLineValidateWhenInputIsCorrectThenValidationShouldBeSucessful() {
-		if (CanvasCreationService.getCanvas() == null) {
+		if (CanvasService.getCanvas() == null) {
 			ShapeCreationOrchestrator shapeCreationOrchestrator = new ShapeCreationOrchestrator();
 			shapeCreationOrchestrator.createShape("C 20 4");
 		}

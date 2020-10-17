@@ -7,7 +7,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import com.example.graphics.constants.ApplicationWarningCode;
-import com.example.graphics.creator.service.impl.CanvasCreationService;
+import com.example.graphics.creator.service.impl.CanvasService;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.model.Point;
 
@@ -58,7 +58,7 @@ public class GenericUtils {
 
 	public static boolean checkIfThePointIsInsideCanvas(Point... points) {
 		boolean isPointInsideCanvas = true;
-		String[][] canvas = CanvasCreationService.getCanvas();
+		String[][] canvas = CanvasService.getCanvas();
 	
 		if(canvas == null) {
 			throw new CustomException(ApplicationWarningCode.CANVAS_NOT_PRESENT);

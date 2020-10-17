@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationWarningCode;
-import com.example.graphics.creator.service.impl.CanvasCreationService;
+import com.example.graphics.creator.service.impl.CanvasService;
 import com.example.graphics.exception.CustomException;
 
 public class ValidationOrchestratorTest {
@@ -48,7 +48,7 @@ public class ValidationOrchestratorTest {
 	@Test
 	public void testTriggerValidationWhenInputIsCorrectForCanvasThenValidationShouldBeSuccessfully() {
 		String inputString = "C 100 80";
-		CanvasCreationService.destroyCanvas();
+		CanvasService.destroyCanvas();
 		assertTrue(validationOrchestrator.performValidation(inputString));
 	}
 

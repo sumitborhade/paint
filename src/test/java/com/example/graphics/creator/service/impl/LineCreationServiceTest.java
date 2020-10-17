@@ -10,7 +10,7 @@ import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationWarningCode;
 import com.example.graphics.creator.service.ShapeCreator;
-import com.example.graphics.creator.service.impl.CanvasCreationService;
+import com.example.graphics.creator.service.impl.CanvasService;
 import com.example.graphics.creator.service.impl.LineCreationService;
 import com.example.graphics.exception.CustomException;
 
@@ -40,8 +40,8 @@ public class LineCreationServiceTest {
 	
 	@Test
 	public void testCreateShapeWhenLinePointsAreValidThenMethodShouldReturnTrue() {
-		CanvasCreationService.destroyCanvas();
-		ShapeCreator canvas = new CanvasCreationService();
+		CanvasService.destroyCanvas();
+		ShapeCreator canvas = new CanvasService();
 		canvas.createShape("C 20 4".split(" "));
 		assertTrue("Line should be created.", line.createShape("L 1 2 6 2".split(" ")));
 	}

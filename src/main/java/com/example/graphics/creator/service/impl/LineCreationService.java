@@ -19,7 +19,7 @@ public class LineCreationService implements ShapeCreator {
 			throw new CustomException(ApplicationWarningCode.INVALID_LINE_POINTS);
 		}
 		
-		String[][] canvas = CanvasCreationService.getCanvas();
+		String[][] canvas = CanvasService.getCanvas();
 		
 		for (int counterY = startPoint.getX(); counterY <= endPoint.getX(); counterY++) {
 			for (int counterX = startPoint.getY(); counterX <= endPoint.getY(); counterX++) {

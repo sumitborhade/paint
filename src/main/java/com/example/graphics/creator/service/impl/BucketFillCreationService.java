@@ -9,7 +9,7 @@ public class BucketFillCreationService implements ShapeCreator {
 	public boolean createShape(String[] inputArray) {
 		Point fillPoint = new Point(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
 		String color = inputArray[3];
-		String[][] canvas = CanvasCreationService.getCanvas();
+		String[][] canvas = CanvasService.getCanvas();
 		String colorToReplace = canvas[fillPoint.getX()][fillPoint.getY()];
 		colorTheCell(canvas, fillPoint, color, colorToReplace);
 		return true;

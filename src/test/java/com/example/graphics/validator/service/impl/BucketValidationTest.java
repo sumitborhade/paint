@@ -56,7 +56,7 @@ public class BucketValidationTest {
 	
 	@Test
 	public void testBucketValidateWhenInputIsCorrectThenValidationShouldBeSucessful() {
-		String[] bucketInputArray = "B 100 80 C".split(" ");
+		String[] bucketInputArray = "B 14 1 C".split(" ");
 		assertTrue("Bucket validation should be successful.", bucketValidation.validate(bucketInputArray));
 	}
 

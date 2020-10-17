@@ -4,82 +4,68 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
-import org.junit.FixMethodOrder;
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
+import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationWarningCode;
-import com.example.graphics.creator.service.impl.CanvasCreationService;
 import com.example.graphics.exception.CustomException;
 
-@FixMethodOrder(MethodSorters.NAME_ASCENDING)
 public class CanvasServiceImplTest {
-	
-	@Test
-	public void testAConstructorWhenIncorrectWidthIsPassedThenCanvasShouldNotBeCreated() {
-		try {
-			if (CanvasCreationService.getCanvas() == null) {
-				CanvasCreationService canvasCreationService = new CanvasCreationService();
-				canvasCreationService.createCanvas(0, 4);
-			}
-		} catch (CustomException e) {
-			assertEquals(ApplicationWarningCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage(), e.getMessage());
-		}
+
+	private CanvasService canvasService;
+
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
+
+	@Before
+	public void setUp() throws Exception {
+		CanvasService.destroyCanvas();
+		canvasService = new CanvasService();
 	}
-	
-	@Test
-	public void testBConstructorWhenIncorrectHeightIsPassedThenCanvasShouldNotBeCreated() {
-		try {
-			if (CanvasCreationService.getCanvas() == null) {
-				CanvasCreationService canvasCreationService = new CanvasCreationService();
-				canvasCreationService.createCanvas(10, 0);
-			}
-		} catch (CustomException e) {
-			assertEquals(ApplicationWarningCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage(), e.getMessage());
-		}
+
+	@After
+	public void tearDown() throws Exception {
+		canvasService = null;
 	}
-	
+
 	@Test
-	public void testCConstructorWhenIncorrectHeightIsPassedThenCanvasShouldNotBeCreated() {
-		try {
-			CanvasCreationService.destroyCanvas();
-			CanvasCreationService canvasCreationService = new CanvasCreationService();
-			canvasCreationService.createCanvas(10, 0);
-		} catch (CustomException e) {
-			assertEquals(ApplicationWarningCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage(), e.getMessage());
-		}
+	public void testCreateCanvasWhenIncorrectWidthIsPassedThenCanvasShouldNotBeCreated() {
+		thrown.expect(CustomException.class);
+		thrown.expectMessage(ApplicationWarningCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage());
+		canvasService.createCanvas(0, 4);
 	}
-	
+
 	@Test
-	public void testDConstructorWhenWidthAndHeightAreZeroThenCanvasShouldNotBeCreated() {
-		try {
-			CanvasCreationService.destroyCanvas();
-			CanvasCreationService canvasCreationService = new CanvasCreationService();
-			canvasCreationService.createCanvas(0, 0);
-		} catch (CustomException e) {
-			assertEquals(ApplicationWarningCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage(), e.getMessage());
-		}
+	public void testCreateCanvasWhenIncorrectHeightIsPassedThenCanvasShouldNotBeCreated() {
+		thrown.expect(CustomException.class);
+		thrown.expectMessage(ApplicationWarningCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage());
+		canvasService.createCanvas(10, 0);
 	}
-	
+
 	@Test
-	public void testPConstructorWhenInputIsCorrectThenCanvasShouldBeCreated() {
-		if (CanvasCreationService.getCanvas() == null) {
-			CanvasCreationService canvasCreationService = new CanvasCreationService();
-			canvasCreationService.createCanvas(20, 4);
-		}
-		assertNotNull("Canvas should be created and hence will not be null.",CanvasCreationService.getCanvas());
-		assertEquals("After adding the right & left columns width should be 22.", 22, CanvasCreationService.getCanvas().length);
-		assertTrue("Canvas should not throw any exception.", CanvasCreationService.printCanvas());
+	public void testCreateCanvasWhenWidthAndHeightAreZeroThenCanvasShouldNotBeCreated() {
+		thrown.expect(CustomException.class);
+		thrown.expectMessage(ApplicationWarningCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage());
+		canvasService.createCanvas(0, 0);
 	}
-	
+
 	@Test
-	public void testQConstructorWhenSecondCanvasIsTriedToBeCreatedThenSecondCanvasShouldNotBeCreated() {
-		try {
-			CanvasCreationService canvasCreationService = new CanvasCreationService();
-			canvasCreationService.createCanvas(20, 4);
-		} catch (CustomException e) {
-			assertEquals(ApplicationWarningCode.CANVAS_ALREADY_PRESENT.getMessage(), e.getMessage());
-		}
+	public void testCreateCanvasWhenInputIsCorrectThenCanvasShouldBeCreated() {
+		canvasService.createCanvas(20, 4);
+		assertNotNull("Canvas should be created and hence will not be null.", CanvasService.getCanvas());
+		assertEquals("After adding the right & left columns width should be 22.", 22, CanvasService.getCanvas().length);
+		assertTrue("Canvas should not throw any exception.", CanvasService.printCanvas());
 	}
-	
+
+	@Test
+	public void testCreateCanvasWhenSecondCanvasIsTriedToBeCreatedThenSecondCanvasShouldNotBeCreated() {
+		thrown.expect(CustomException.class);
+		thrown.expectMessage(ApplicationWarningCode.CANVAS_ALREADY_PRESENT.getMessage());
+		canvasService.createCanvas(20, 4);
+		canvasService.createCanvas(20, 6);
+	}
+
 }

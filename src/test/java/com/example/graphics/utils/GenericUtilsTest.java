@@ -8,7 +8,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationWarningCode;
-import com.example.graphics.creator.service.impl.CanvasCreationService;
+import com.example.graphics.creator.service.impl.CanvasService;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.model.Point;
 import com.example.graphics.orchestrator.ShapeCreationOrchestrator;
@@ -46,7 +46,7 @@ public class GenericUtilsTest {
 
 	@Test
 	public void testCheckWhenThePointIsInsideCanvasThenPointIsInsideCanvasThenTrueShouldBeReturned() {
-		CanvasCreationService.destroyCanvas();
+		CanvasService.destroyCanvas();
 		ShapeCreationOrchestrator shapeCreationOrchestrator = new ShapeCreationOrchestrator();
 		shapeCreationOrchestrator.createShape("C 20 4");
 
@@ -56,7 +56,7 @@ public class GenericUtilsTest {
 
 	@Test
 	public void testCheckWhenThePointIsInsideCanvasThenPointIsOutsideCanvasThenFalseShouldBeReturned() {
-		CanvasCreationService.destroyCanvas();
+		CanvasService.destroyCanvas();
 		ShapeCreationOrchestrator shapeCreationOrchestrator = new ShapeCreationOrchestrator();
 		shapeCreationOrchestrator.createShape("C 20 4");
 
@@ -66,7 +66,7 @@ public class GenericUtilsTest {
 
 	@Test
 	public void testCheckWhenThePointIsInsideCanvasThenPointsAreOutsideCanvasThenFalseShouldBeReturned() {
-		CanvasCreationService.destroyCanvas();
+		CanvasService.destroyCanvas();
 		ShapeCreationOrchestrator shapeCreationOrchestrator = new ShapeCreationOrchestrator();
 		shapeCreationOrchestrator.createShape("C 20 4");
 
@@ -84,7 +84,7 @@ public class GenericUtilsTest {
 	public void testCheckWhenTheCanvasIsNullThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
 		thrown.expectMessage(ApplicationWarningCode.CANVAS_NOT_PRESENT.getMessage());
-		CanvasCreationService.destroyCanvas();
+		CanvasService.destroyCanvas();
 		Point point = new Point(21, 5);
 		GenericUtils.checkIfThePointIsInsideCanvas(point);
 	}

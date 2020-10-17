@@ -1,7 +1,7 @@
 package com.example.graphics.validator.service.impl;
 
 import com.example.graphics.constants.ApplicationWarningCode;
-import com.example.graphics.creator.service.impl.CanvasCreationService;
+import com.example.graphics.creator.service.impl.CanvasService;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.utils.GenericUtils;
 import com.example.graphics.validator.service.Validator;
@@ -17,7 +17,7 @@ public class CanvasValidation implements Validator {
 	}
 	
 	private void validateIfCanvasIsAlreadyPresent() {
-		if(CanvasCreationService.getCanvas() != null) {
+		if(CanvasService.getCanvas() != null) {
 			throw new CustomException(ApplicationWarningCode.CANVAS_ALREADY_PRESENT);
 		}
 	}

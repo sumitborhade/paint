@@ -5,7 +5,7 @@ import com.example.graphics.creator.service.ShapeCreator;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.utils.GenericUtils;
 
-public class CanvasCreationService implements ShapeCreator {
+public class CanvasService implements ShapeCreator {
 
 	private static String[][] canvas;
 	
@@ -13,7 +13,7 @@ public class CanvasCreationService implements ShapeCreator {
 		boolean wasCanvasPresentEarlier = true;
 
 		if (canvas == null) {
-			synchronized (CanvasCreationService.class) {
+			synchronized (CanvasService.class) {
 				if (canvas == null) {
 					wasCanvasPresentEarlier = false;
 					if (GenericUtils.isValueLessThanOne(width, height)) {

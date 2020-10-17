@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationWarningCode;
-import com.example.graphics.creator.service.impl.CanvasCreationService;
+import com.example.graphics.creator.service.impl.CanvasService;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.validator.service.Validator;
 import com.example.graphics.validator.service.impl.RectangleValidation;
@@ -65,8 +65,8 @@ public class RectangleValidationTest {
 	
 	@Test
 	public void testRectangleValidateWhenInputIsCorrectThenValidationShouldBeSucessful() {
-		CanvasCreationService.destroyCanvas();
-		CanvasCreationService canvasCreationService = new CanvasCreationService();
+		CanvasService.destroyCanvas();
+		CanvasService canvasCreationService = new CanvasService();
 		canvasCreationService.createCanvas(20, 4);
 		String[] rectangleInputArray = "L 16 3 18 4".split(" ");
 		assertTrue("Rectangle validation should be successful.", rectangleValidation.validate(rectangleInputArray));

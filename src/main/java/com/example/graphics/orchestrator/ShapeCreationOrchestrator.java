@@ -2,7 +2,7 @@ package com.example.graphics.orchestrator;
 
 import com.example.graphics.constants.ApplicationWarningCode;
 import com.example.graphics.creator.service.ShapeCreator;
-import com.example.graphics.creator.service.impl.CanvasCreationService;
+import com.example.graphics.creator.service.impl.CanvasService;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.factory.ShapeCreatorFactory;
 
@@ -23,7 +23,7 @@ public class ShapeCreationOrchestrator {
 		}
 		
 		shape.createShape(inputArray);
-		CanvasCreationService.printCanvas();
+		CanvasService.printCanvas();
 		
 		return true;
 	}
