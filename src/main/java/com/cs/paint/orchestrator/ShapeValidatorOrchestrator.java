@@ -3,7 +3,7 @@ package com.cs.paint.orchestrator;
 import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.factory.ShapeValidatorFactory;
-import com.cs.paint.validator.service.Validator;
+import com.cs.paint.service.Validator;
 
 public class ShapeValidatorOrchestrator {
 

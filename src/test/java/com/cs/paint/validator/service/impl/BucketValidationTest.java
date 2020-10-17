@@ -11,9 +11,9 @@ import org.junit.rules.ExpectedException;
 import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.service.ShapeService;
+import com.cs.paint.service.Validator;
 import com.cs.paint.service.creator.impl.CanvasService;
 import com.cs.paint.service.validator.impl.BucketFillValidator;
-import com.cs.paint.validator.service.Validator;
 
 public class BucketValidationTest {
 

@@ -2,9 +2,9 @@ package com.cs.paint.service.validator.impl;
 
 import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
+import com.cs.paint.service.Validator;
 import com.cs.paint.service.creator.impl.CanvasService;
 import com.cs.paint.utils.GenericUtils;
-import com.cs.paint.validator.service.Validator;
 
 public class CanvasValidator implements Validator {
 

@@ -3,8 +3,8 @@ package com.cs.paint.service.validator.impl;
 import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.model.PointModel;
+import com.cs.paint.service.Validator;
 import com.cs.paint.utils.GenericUtils;
-import com.cs.paint.validator.service.Validator;
 
 public class LineValidator implements Validator {
 

@@ -12,7 +12,7 @@ import com.cs.paint.service.creator.impl.LineService;
 import com.cs.paint.service.creator.impl.RectangleService;
 
 public class ShapeCreatorFactory {
-
+	
 	private static Map<String, ShapeService> validationEntitiesMap = new HashMap<>();
 	
 	static {
