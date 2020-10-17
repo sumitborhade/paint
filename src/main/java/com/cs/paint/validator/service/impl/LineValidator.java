@@ -2,7 +2,7 @@ package com.cs.paint.validator.service.impl;
 
 import com.cs.paint.constants.ApplicationWarningCode;
 import com.cs.paint.exception.CustomException;
-import com.cs.paint.model.Point;
+import com.cs.paint.model.PointModel;
 import com.cs.paint.utils.GenericUtils;
 import com.cs.paint.validator.service.Validator;
 
@@ -36,8 +36,8 @@ public class LineValidator implements Validator {
 	}
 	
 	private void validateIfTheLinePointsInsideCanvas(String[] inputArray) {
-		Point startPoint = new Point(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
-		Point endPoint = new Point(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[4]));
+		PointModel startPoint = new PointModel(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
+		PointModel endPoint = new PointModel(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[4]));
 		boolean isLinePointsAreInsideCanvas = GenericUtils.checkIfThePointIsInsideCanvas(startPoint, endPoint);
 		
 		if(!isLinePointsAreInsideCanvas) {

@@ -9,11 +9,11 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.cs.paint.constants.ApplicationWarningCode;
-import com.cs.paint.creator.service.ShapeCreator;
+import com.cs.paint.creator.service.ShapeService;
 import com.cs.paint.creator.service.impl.CanvasService;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.validator.service.Validator;
-import com.cs.paint.validator.service.impl.BucketFillValidation;
+import com.cs.paint.validator.service.impl.BucketFillValidator;
 
 public class BucketValidationTest {
 
@@ -25,9 +25,9 @@ public class BucketValidationTest {
 	@Before
 	public void setUp() throws Exception {
 		CanvasService.destroyCanvas();
-		ShapeCreator canvas = new CanvasService();
+		ShapeService canvas = new CanvasService();
 		canvas.createShape("C 20 4".split(" "));
-		bucketValidation = new BucketFillValidation();
+		bucketValidation = new BucketFillValidator();
 	}
 
 	@After

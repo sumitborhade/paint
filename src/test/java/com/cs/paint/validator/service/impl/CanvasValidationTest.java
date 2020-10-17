@@ -12,7 +12,7 @@ import com.cs.paint.constants.ApplicationWarningCode;
 import com.cs.paint.creator.service.impl.CanvasService;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.validator.service.Validator;
-import com.cs.paint.validator.service.impl.CanvasValidation;
+import com.cs.paint.validator.service.impl.CanvasValidator;
 
 public class CanvasValidationTest {
 
@@ -24,7 +24,7 @@ public class CanvasValidationTest {
 	@Before
 	public void setUp() throws Exception {
 		CanvasService.destroyCanvas();
-		canvasValidation = new CanvasValidation();
+		canvasValidation = new CanvasValidator();
 	}
 
 	@After

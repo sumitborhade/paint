@@ -8,13 +8,13 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.cs.paint.creator.service.ShapeCreator;
-import com.cs.paint.creator.service.impl.BucketFillCreationService;
+import com.cs.paint.creator.service.ShapeService;
+import com.cs.paint.creator.service.impl.BucketFillService;
 import com.cs.paint.creator.service.impl.CanvasService;
 
 public class BucketFillCreationServiceTest {
 
-	private ShapeCreator bucketFill;
+	private ShapeService bucketFill;
 	
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
@@ -22,9 +22,9 @@ public class BucketFillCreationServiceTest {
 	@Before
 	public void setUp() throws Exception {
 		CanvasService.destroyCanvas();
-		ShapeCreator canvas = new CanvasService();
+		ShapeService canvas = new CanvasService();
 		canvas.createShape("C 20 4".split(" "));
-		bucketFill = new BucketFillCreationService();
+		bucketFill = new BucketFillService();
 	}
 
 	@After

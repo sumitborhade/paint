@@ -7,7 +7,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.cs.paint.constants.ApplicationWarningCode;
-import com.cs.paint.creator.service.ShapeCreator;
+import com.cs.paint.creator.service.ShapeService;
 import com.cs.paint.creator.service.impl.CanvasService;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.factory.ShapeCreatorFactory;
@@ -26,7 +26,7 @@ public class ShapeCreatorFactoryTest {
 	
 	@Test
 	public void testGetShapeEntityWhenInputTypeIsCThenCanvasShouldBeReturned() {
-		ShapeCreator canvasShape = ShapeCreatorFactory.getShapeEntity("c");
+		ShapeService canvasShape = ShapeCreatorFactory.getShapeEntity("c");
 		assertTrue("In this test, shape should be of type canvas", canvasShape instanceof CanvasService);
 	}
 

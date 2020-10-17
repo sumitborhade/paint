@@ -1,19 +1,19 @@
 package com.cs.paint.creator.service.impl;
 
-import com.cs.paint.creator.service.ShapeCreator;
-import com.cs.paint.model.Point;
+import com.cs.paint.creator.service.ShapeService;
+import com.cs.paint.model.PointModel;
 
-public class RectangleCreationService implements ShapeCreator {
+public class RectangleService implements ShapeService {
 
 	@Override
 	public boolean createShape(String[] inputArray) {
 		
-		Point upperLeftPoint = new Point(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
-		Point lowerRightPoint = new Point(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[4]));
-		Point upperRightPoint = new Point(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[2]));
-		Point lowerLeftPoint = new Point(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[4]));
+		PointModel upperLeftPoint = new PointModel(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
+		PointModel lowerRightPoint = new PointModel(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[4]));
+		PointModel upperRightPoint = new PointModel(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[2]));
+		PointModel lowerLeftPoint = new PointModel(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[4]));
 		
-		ShapeCreator line = new LineCreationService();
+		ShapeService line = new LineService();
 		
 		String upperHorizontalLine = "L " + upperLeftPoint.getX() + " " + upperLeftPoint.getY() + " "
 				+ upperRightPoint.getX() + " " + upperRightPoint.getY();

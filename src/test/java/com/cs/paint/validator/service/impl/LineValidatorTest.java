@@ -9,7 +9,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.cs.paint.constants.ApplicationWarningCode;
-import com.cs.paint.creator.service.ShapeCreator;
+import com.cs.paint.creator.service.ShapeService;
 import com.cs.paint.creator.service.impl.CanvasService;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.validator.service.Validator;
@@ -25,7 +25,7 @@ public class LineValidatorTest {
 	@Before
 	public void setUp() throws Exception {
 		CanvasService.destroyCanvas();
-		ShapeCreator canvasCreator = new CanvasService();
+		ShapeService canvasCreator = new CanvasService();
 		canvasCreator.createShape("C 20 4".split(" "));
 		lineValidator = new LineValidator();
 	}

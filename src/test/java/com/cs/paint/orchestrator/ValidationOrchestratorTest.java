@@ -11,18 +11,18 @@ import org.junit.rules.ExpectedException;
 import com.cs.paint.constants.ApplicationWarningCode;
 import com.cs.paint.creator.service.impl.CanvasService;
 import com.cs.paint.exception.CustomException;
-import com.cs.paint.orchestrator.ValidationOrchestrator;
+import com.cs.paint.orchestrator.ShapeValidatorOrchestrator;
 
 public class ValidationOrchestratorTest {
 
-	private ValidationOrchestrator validationOrchestrator;
+	private ShapeValidatorOrchestrator validationOrchestrator;
 
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
 
 	@Before
 	public void setUp() throws Exception {
-		validationOrchestrator = new ValidationOrchestrator();
+		validationOrchestrator = new ShapeValidatorOrchestrator();
 	}
 
 	@After

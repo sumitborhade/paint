@@ -9,14 +9,14 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.cs.paint.constants.ApplicationWarningCode;
-import com.cs.paint.creator.service.ShapeCreator;
+import com.cs.paint.creator.service.ShapeService;
 import com.cs.paint.creator.service.impl.CanvasService;
-import com.cs.paint.creator.service.impl.LineCreationService;
+import com.cs.paint.creator.service.impl.LineService;
 import com.cs.paint.exception.CustomException;
 
 public class LineCreationServiceTest {
 
-	private ShapeCreator line;
+	private ShapeService line;
 	
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
@@ -24,9 +24,9 @@ public class LineCreationServiceTest {
 	@Before
 	public void setUp() throws Exception {
 		CanvasService.destroyCanvas();
-		ShapeCreator canvas = new CanvasService();
+		ShapeService canvas = new CanvasService();
 		canvas.createShape("C 20 4".split(" "));
-		line = new LineCreationService();
+		line = new LineService();
 	}
 
 	@After

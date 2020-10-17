@@ -6,20 +6,20 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.cs.paint.creator.service.ShapeCreator;
+import com.cs.paint.creator.service.ShapeService;
 import com.cs.paint.creator.service.impl.CanvasService;
-import com.cs.paint.creator.service.impl.RectangleCreationService;
+import com.cs.paint.creator.service.impl.RectangleService;
 
 public class RectangleCreationServiceTest {
 
-	private ShapeCreator rectangle;
+	private ShapeService rectangle;
 	
 	@Before
 	public void setUp() throws Exception {
 		CanvasService.destroyCanvas();
-		ShapeCreator canvas = new CanvasService();
+		ShapeService canvas = new CanvasService();
 		canvas.createShape("C 20 4".split(" "));
-		rectangle = new RectangleCreationService();
+		rectangle = new RectangleService();
 	}
 
 	@After

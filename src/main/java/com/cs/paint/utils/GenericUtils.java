@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 import com.cs.paint.constants.ApplicationWarningCode;
 import com.cs.paint.creator.service.impl.CanvasService;
 import com.cs.paint.exception.CustomException;
-import com.cs.paint.model.Point;
+import com.cs.paint.model.PointModel;
 
 public class GenericUtils {
 
@@ -49,7 +49,7 @@ public class GenericUtils {
 		return intValuesLessThanOneList.size() > 0;
 	}
 	
-	public static boolean checkIfThePointIsInsideCanvas(Point... points) {
+	public static boolean checkIfThePointIsInsideCanvas(PointModel... points) {
 		boolean isPointInsideCanvas = true;
 		String[][] canvas = CanvasService.getCanvas();
 	
@@ -63,7 +63,7 @@ public class GenericUtils {
 //		System.out.println("Width :: " + canvasInternalWidth);
 //		System.out.println("Height :: " + canvasInternalHeight);
 		
-		for (Point point : points) {
+		for (PointModel point : points) {
 			int pointX = point.getX();
 			int pointY = point.getY();
 			

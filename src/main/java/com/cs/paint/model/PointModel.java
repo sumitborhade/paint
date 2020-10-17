@@ -1,12 +1,12 @@
 package com.cs.paint.model;
 
-public class Point {
+public class PointModel {
 
 	private int x;
 
 	private int y;
 	
-	public Point(int x, int y) {
+	public PointModel(int x, int y) {
 		super();
 		this.x = x;
 		this.y = y;

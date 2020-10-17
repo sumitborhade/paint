@@ -1,11 +1,11 @@
 package com.cs.paint.creator.service.impl;
 
 import com.cs.paint.constants.ApplicationWarningCode;
-import com.cs.paint.creator.service.ShapeCreator;
+import com.cs.paint.creator.service.ShapeService;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.utils.GenericUtils;
 
-public class CanvasService implements ShapeCreator {
+public class CanvasService implements ShapeService {
 
 	private static String[][] canvas;
 	

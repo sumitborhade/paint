@@ -1,5 +1,5 @@
 package com.cs.paint.creator.service;
 
-public interface ShapeCreator {
+public interface ShapeService {
 	boolean createShape(String[] inputArray);
 }

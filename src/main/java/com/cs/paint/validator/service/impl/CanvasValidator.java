@@ -6,7 +6,7 @@ import com.cs.paint.exception.CustomException;
 import com.cs.paint.utils.GenericUtils;
 import com.cs.paint.validator.service.Validator;
 
-public class CanvasValidation implements Validator {
+public class CanvasValidator implements Validator {
 
 	@Override
 	public boolean validate(String[] inputArray) {

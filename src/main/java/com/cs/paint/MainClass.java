@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.cs.paint.creator.service.impl.CanvasService;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.orchestrator.ShapeCreationOrchestrator;
-import com.cs.paint.orchestrator.ValidationOrchestrator;
+import com.cs.paint.orchestrator.ShapeValidatorOrchestrator;
 
 /**
  * This is a entry point for Application.
@@ -28,7 +28,7 @@ public class MainClass {
 					}
 					
 					//1. Validation
-					ValidationOrchestrator validationOrchestrator = new ValidationOrchestrator();
+					ShapeValidatorOrchestrator validationOrchestrator = new ShapeValidatorOrchestrator();
 					validationOrchestrator.performValidation(inputString);
 					
 					//2. Shape creation

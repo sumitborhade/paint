@@ -6,20 +6,20 @@ import java.util.Map;
 import com.cs.paint.constants.ApplicationWarningCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.validator.service.Validator;
-import com.cs.paint.validator.service.impl.BucketFillValidation;
-import com.cs.paint.validator.service.impl.CanvasValidation;
+import com.cs.paint.validator.service.impl.BucketFillValidator;
+import com.cs.paint.validator.service.impl.CanvasValidator;
 import com.cs.paint.validator.service.impl.LineValidator;
-import com.cs.paint.validator.service.impl.RectangleValidation;
+import com.cs.paint.validator.service.impl.RectangleValidator;
 
-public class ValidationFactory {
+public class ShapeValidatorFactory {
 	
 	private static Map<String, Validator> validationEntitiesMap = new HashMap<>();
 	
 	static {
-		validationEntitiesMap.put("C", new CanvasValidation());
+		validationEntitiesMap.put("C", new CanvasValidator());
 		validationEntitiesMap.put("L", new LineValidator());
-		validationEntitiesMap.put("R", new RectangleValidation());
-		validationEntitiesMap.put("B", new BucketFillValidation());
+		validationEntitiesMap.put("R", new RectangleValidator());
+		validationEntitiesMap.put("B", new BucketFillValidator());
 	}
 	
 	public static Validator getValidationEntity(String inputType) {

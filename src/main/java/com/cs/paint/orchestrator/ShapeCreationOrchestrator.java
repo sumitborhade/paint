@@ -1,7 +1,7 @@
 package com.cs.paint.orchestrator;
 
 import com.cs.paint.constants.ApplicationWarningCode;
-import com.cs.paint.creator.service.ShapeCreator;
+import com.cs.paint.creator.service.ShapeService;
 import com.cs.paint.creator.service.impl.CanvasService;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.factory.ShapeCreatorFactory;
@@ -16,7 +16,7 @@ public class ShapeCreationOrchestrator {
 		
 		String[] inputArray = inputString.split(" ");
 		
-		ShapeCreator shape = ShapeCreatorFactory.getShapeEntity(inputArray[0]);
+		ShapeService shape = ShapeCreatorFactory.getShapeEntity(inputArray[0]);
 		
 		if(shape == null) {
 			throw new CustomException(ApplicationWarningCode.INCORRECT_DESIGN_TYPE);

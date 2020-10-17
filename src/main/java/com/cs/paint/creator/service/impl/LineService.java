@@ -1,16 +1,16 @@
 package com.cs.paint.creator.service.impl;
 
 import com.cs.paint.constants.ApplicationWarningCode;
-import com.cs.paint.creator.service.ShapeCreator;
+import com.cs.paint.creator.service.ShapeService;
 import com.cs.paint.exception.CustomException;
-import com.cs.paint.model.Point;
+import com.cs.paint.model.PointModel;
 
-public class LineCreationService implements ShapeCreator {
+public class LineService implements ShapeService {
 
 	@Override
 	public boolean createShape(String[] inputArray) {
-		Point startPoint = new Point(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
-		Point endPoint = new Point(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[4]));
+		PointModel startPoint = new PointModel(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
+		PointModel endPoint = new PointModel(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[4]));
 
 		boolean isLineCreated = true;
 		

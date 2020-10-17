@@ -2,10 +2,10 @@ package com.cs.paint.orchestrator;
 
 import com.cs.paint.constants.ApplicationWarningCode;
 import com.cs.paint.exception.CustomException;
-import com.cs.paint.factory.ValidationFactory;
+import com.cs.paint.factory.ShapeValidatorFactory;
 import com.cs.paint.validator.service.Validator;
 
-public class ValidationOrchestrator {
+public class ShapeValidatorOrchestrator {
 
 	public boolean performValidation(String inputString) {
 		if (inputString == null) {
@@ -14,7 +14,7 @@ public class ValidationOrchestrator {
 		
 		String[] inputArray = inputString.split(" ");
 		
-		Validator validation = ValidationFactory.getValidationEntity(inputArray[0]);
+		Validator validation = ShapeValidatorFactory.getValidationEntity(inputArray[0]);
 		
 		if(validation == null) {
 			throw new CustomException(ApplicationWarningCode.INCORRECT_DESIGN_TYPE);
