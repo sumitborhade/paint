@@ -1,4 +1,4 @@
-package com.example.graphics.service.impl;
+package com.example.graphics.creator.service.impl;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;

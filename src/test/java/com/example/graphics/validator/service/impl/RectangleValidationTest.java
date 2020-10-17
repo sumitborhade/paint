@@ -1,4 +1,4 @@
-package com.example.graphics.validation.impl;
+package com.example.graphics.validator.service.impl;
 
 import static org.junit.Assert.assertTrue;
 

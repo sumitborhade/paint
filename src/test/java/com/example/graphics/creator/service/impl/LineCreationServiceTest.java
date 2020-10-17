@@ -1,4 +1,4 @@
-package com.example.graphics.shape.service.impl;
+package com.example.graphics.creator.service.impl;
 
 import static org.junit.Assert.assertTrue;
 
