@@ -1,10 +1,10 @@
 package com.cs.paint.orchestrator;
 
 import com.cs.paint.constants.ApplicationWarningCode;
-import com.cs.paint.creator.service.ShapeService;
-import com.cs.paint.creator.service.impl.CanvasService;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.factory.ShapeCreatorFactory;
+import com.cs.paint.service.ShapeService;
+import com.cs.paint.service.creator.impl.CanvasService;
 
 public class ShapeCreationOrchestrator {
 

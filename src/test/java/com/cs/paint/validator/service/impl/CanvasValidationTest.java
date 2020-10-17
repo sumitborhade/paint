@@ -9,10 +9,10 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.cs.paint.constants.ApplicationWarningCode;
-import com.cs.paint.creator.service.impl.CanvasService;
 import com.cs.paint.exception.CustomException;
+import com.cs.paint.service.creator.impl.CanvasService;
+import com.cs.paint.service.validator.impl.CanvasValidator;
 import com.cs.paint.validator.service.Validator;
-import com.cs.paint.validator.service.impl.CanvasValidator;
 
 public class CanvasValidationTest {
 

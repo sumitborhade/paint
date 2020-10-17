@@ -8,9 +8,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.cs.paint.creator.service.ShapeService;
-import com.cs.paint.creator.service.impl.BucketFillService;
-import com.cs.paint.creator.service.impl.CanvasService;
+import com.cs.paint.service.ShapeService;
+import com.cs.paint.service.creator.impl.BucketFillService;
+import com.cs.paint.service.creator.impl.CanvasService;
 
 public class BucketFillCreationServiceTest {
 

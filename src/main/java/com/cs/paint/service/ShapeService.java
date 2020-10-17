@@ -1,4 +1,4 @@
-package com.cs.paint.creator.service;
+package com.cs.paint.service;
 
 public interface ShapeService {
 	boolean createShape(String[] inputArray);

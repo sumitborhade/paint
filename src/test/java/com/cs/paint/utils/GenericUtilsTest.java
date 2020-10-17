@@ -8,10 +8,10 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.cs.paint.constants.ApplicationWarningCode;
-import com.cs.paint.creator.service.impl.CanvasService;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.model.PointModel;
 import com.cs.paint.orchestrator.ShapeCreationOrchestrator;
+import com.cs.paint.service.creator.impl.CanvasService;
 import com.cs.paint.utils.GenericUtils;
 
 public class GenericUtilsTest {

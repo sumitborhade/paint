@@ -1,4 +1,4 @@
-package com.cs.paint.validator.service.impl;
+package com.cs.paint.service.validator.impl;
 
 import com.cs.paint.constants.ApplicationWarningCode;
 import com.cs.paint.exception.CustomException;

@@ -1,9 +1,9 @@
-package com.cs.paint.creator.service.impl;
+package com.cs.paint.service.creator.impl;
 
 import com.cs.paint.constants.ApplicationWarningCode;
-import com.cs.paint.creator.service.ShapeService;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.model.PointModel;
+import com.cs.paint.service.ShapeService;
 
 public class LineService implements ShapeService {
 

@@ -11,8 +11,8 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.cs.paint.constants.ApplicationWarningCode;
-import com.cs.paint.creator.service.impl.CanvasService;
 import com.cs.paint.exception.CustomException;
+import com.cs.paint.service.creator.impl.CanvasService;
 
 public class CanvasServiceImplTest {
 

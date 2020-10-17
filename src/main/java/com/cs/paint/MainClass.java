@@ -2,10 +2,10 @@ package com.cs.paint;
 
 import java.util.Scanner;
 
-import com.cs.paint.creator.service.impl.CanvasService;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.orchestrator.ShapeCreationOrchestrator;
 import com.cs.paint.orchestrator.ShapeValidatorOrchestrator;
+import com.cs.paint.service.creator.impl.CanvasService;
 
 /**
  * This is a entry point for Application.

@@ -6,9 +6,9 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import com.cs.paint.creator.service.ShapeService;
-import com.cs.paint.creator.service.impl.CanvasService;
-import com.cs.paint.creator.service.impl.RectangleService;
+import com.cs.paint.service.ShapeService;
+import com.cs.paint.service.creator.impl.CanvasService;
+import com.cs.paint.service.creator.impl.RectangleService;
 
 public class RectangleCreationServiceTest {
 

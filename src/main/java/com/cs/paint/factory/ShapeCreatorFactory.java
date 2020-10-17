@@ -4,12 +4,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.cs.paint.constants.ApplicationWarningCode;
-import com.cs.paint.creator.service.ShapeService;
-import com.cs.paint.creator.service.impl.BucketFillService;
-import com.cs.paint.creator.service.impl.CanvasService;
-import com.cs.paint.creator.service.impl.LineService;
-import com.cs.paint.creator.service.impl.RectangleService;
 import com.cs.paint.exception.CustomException;
+import com.cs.paint.service.ShapeService;
+import com.cs.paint.service.creator.impl.BucketFillService;
+import com.cs.paint.service.creator.impl.CanvasService;
+import com.cs.paint.service.creator.impl.LineService;
+import com.cs.paint.service.creator.impl.RectangleService;
 
 public class ShapeCreatorFactory {
 
