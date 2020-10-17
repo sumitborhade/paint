@@ -1,6 +1,6 @@
 package com.cs.paint.service.creator.impl;
 
-import com.cs.paint.constants.ApplicationWarningCode;
+import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.model.PointModel;
 import com.cs.paint.service.ShapeService;
@@ -16,7 +16,7 @@ public class LineService implements ShapeService {
 		
 		if (startPoint.getX() != endPoint.getX() && startPoint.getY() != endPoint.getY()) {
 			isLineCreated = false;
-			throw new CustomException(ApplicationWarningCode.INVALID_LINE_POINTS);
+			throw new CustomException(ApplicationExceptionCode.INVALID_LINE_POINTS);
 		}
 		
 		String[][] canvas = CanvasService.getCanvas();

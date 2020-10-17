@@ -1,6 +1,6 @@
 package com.cs.paint.service.validator.impl;
 
-import com.cs.paint.constants.ApplicationWarningCode;
+import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.model.PointModel;
 import com.cs.paint.utils.GenericUtils;
@@ -25,13 +25,13 @@ public class LineValidator implements Validator {
 
 	private void validateIfNumberOfParamsAreCorrect(String[] inputArray) {
 		if (inputArray.length != 5) {
-			throw new CustomException(ApplicationWarningCode.INCORRECT_LINE_INPUT_PARAMS);
+			throw new CustomException(ApplicationExceptionCode.INCORRECT_LINE_INPUT_PARAMS);
 		}
 	}
 
 	private void validateIfThePointsAreInteger(String[] inputArray) {
 		if (!GenericUtils.isInteger(inputArray[1], inputArray[2], inputArray[3], inputArray[4])) {
-			throw new CustomException(ApplicationWarningCode.LINE_INPUT_SHOULD_BE_INTEGER);
+			throw new CustomException(ApplicationExceptionCode.LINE_INPUT_SHOULD_BE_INTEGER);
 		}
 	}
 	
@@ -41,7 +41,7 @@ public class LineValidator implements Validator {
 		boolean isLinePointsAreInsideCanvas = GenericUtils.checkIfThePointIsInsideCanvas(startPoint, endPoint);
 		
 		if(!isLinePointsAreInsideCanvas) {
-			throw new CustomException(ApplicationWarningCode.LINE_COORDINATE_OUT_OF_CANVAS);
+			throw new CustomException(ApplicationExceptionCode.LINE_COORDINATE_OUT_OF_CANVAS);
 		}
 	}
 }

@@ -1,14 +1,12 @@
 package com.cs.paint.exception;
 
-import com.cs.paint.constants.ApplicationWarningCode;
-
 public class CustomException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 
 	private String message;
 	
-	public CustomException(ApplicationWarningCode applicationWarningCode) {
+	public CustomException(ApplicationExceptionCode applicationWarningCode) {
 		this.message = applicationWarningCode.getMessage();
 	}
 

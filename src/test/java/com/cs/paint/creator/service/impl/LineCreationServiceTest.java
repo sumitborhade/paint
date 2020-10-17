@@ -8,7 +8,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.cs.paint.constants.ApplicationWarningCode;
+import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.service.ShapeService;
 import com.cs.paint.service.creator.impl.CanvasService;
@@ -37,7 +37,7 @@ public class LineCreationServiceTest {
 	@Test
 	public void testCreateShapeWhenLinePointsAreInvalidThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.INVALID_LINE_POINTS.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.INVALID_LINE_POINTS.getMessage());
 		line.createShape("L 1 2 3 4".split(" "));
 	}
 	

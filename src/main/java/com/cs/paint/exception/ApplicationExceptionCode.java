@@ -1,11 +1,11 @@
-package com.cs.paint.constants;
+package com.cs.paint.exception;
 
 /**
  * This enum contains the list of all the application status codes. 
  * The entries inside will be used to highlight any warning/exception 
  *
  */
-public enum ApplicationWarningCode {
+public enum ApplicationExceptionCode {
 	
 	//Generic
 	NULL_INPUT("The input is null"),
@@ -36,7 +36,7 @@ public enum ApplicationWarningCode {
 	
 	private String message;
 	
-	private ApplicationWarningCode(String message) {
+	private ApplicationExceptionCode(String message) {
 		this.message = message;
 	}
 

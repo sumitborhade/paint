@@ -3,7 +3,7 @@ package com.cs.paint.factory;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.cs.paint.constants.ApplicationWarningCode;
+import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.service.validator.impl.BucketFillValidator;
 import com.cs.paint.service.validator.impl.CanvasValidator;
@@ -24,7 +24,7 @@ public class ShapeValidatorFactory {
 	
 	public static Validator getValidationEntity(String inputType) {
 		if (inputType == null) {
-			throw new CustomException(ApplicationWarningCode.NULL_INPUT);
+			throw new CustomException(ApplicationExceptionCode.NULL_INPUT);
 		}
 		
 		return validationEntitiesMap.get(inputType.toUpperCase());

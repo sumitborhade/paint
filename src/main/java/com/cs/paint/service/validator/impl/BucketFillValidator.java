@@ -1,6 +1,6 @@
 package com.cs.paint.service.validator.impl;
 
-import com.cs.paint.constants.ApplicationWarningCode;
+import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.model.PointModel;
 import com.cs.paint.utils.GenericUtils;
@@ -18,13 +18,13 @@ public class BucketFillValidator implements Validator {
 
 	private void validateIfThePointsAreInteger(String[] inputArray) {
 		if (!GenericUtils.isInteger(inputArray[1], inputArray[2])) {
-			throw new CustomException(ApplicationWarningCode.BUCKET_FILL_INPUT_SHOULD_BE_INTEGER);
+			throw new CustomException(ApplicationExceptionCode.BUCKET_FILL_INPUT_SHOULD_BE_INTEGER);
 		}
 	}
 
 	private void validateIfNumberOfParamsAreCorrect(String[] inputArray) {
 		if (inputArray.length != 4) {
-			throw new CustomException(ApplicationWarningCode.INCORRECT_BUCKET_FILL_INPUT_PARAMS);
+			throw new CustomException(ApplicationExceptionCode.INCORRECT_BUCKET_FILL_INPUT_PARAMS);
 		}
 	}
 	
@@ -33,7 +33,7 @@ public class BucketFillValidator implements Validator {
 		boolean isFillPointIsInsideCanvas = GenericUtils.checkIfThePointIsInsideCanvas(fillPoint);
 		
 		if(!isFillPointIsInsideCanvas) {
-			throw new CustomException(ApplicationWarningCode.BUCKET_FILL_COORDINATE_OUT_OF_CANVAS);
+			throw new CustomException(ApplicationExceptionCode.BUCKET_FILL_COORDINATE_OUT_OF_CANVAS);
 		}
 	}
 

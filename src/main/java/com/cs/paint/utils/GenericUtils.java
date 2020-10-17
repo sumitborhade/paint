@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-import com.cs.paint.constants.ApplicationWarningCode;
+import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.model.PointModel;
 import com.cs.paint.service.creator.impl.CanvasService;
@@ -19,7 +19,7 @@ public class GenericUtils {
 
 			for (String stringNumber : stringNumbers) {
 				if(stringNumber == null) {
-					throw new CustomException(ApplicationWarningCode.NULL_INPUT);
+					throw new CustomException(ApplicationExceptionCode.NULL_INPUT);
 				}
 				
 				isInteger = pattern.matcher(stringNumber).matches();
@@ -54,7 +54,7 @@ public class GenericUtils {
 		String[][] canvas = CanvasService.getCanvas();
 	
 		if(canvas == null) {
-			throw new CustomException(ApplicationWarningCode.CANVAS_NOT_PRESENT);
+			throw new CustomException(ApplicationExceptionCode.CANVAS_NOT_PRESENT);
 		}
 		
 		int canvasInternalWidth = canvas.length - 2;

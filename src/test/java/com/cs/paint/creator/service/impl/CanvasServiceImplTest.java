@@ -10,7 +10,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.cs.paint.constants.ApplicationWarningCode;
+import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.service.creator.impl.CanvasService;
 
@@ -35,21 +35,21 @@ public class CanvasServiceImplTest {
 	@Test
 	public void testCreateCanvasWhenIncorrectWidthIsPassedThenCanvasShouldNotBeCreated() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage());
 		canvasService.createCanvas(0, 4);
 	}
 
 	@Test
 	public void testCreateCanvasWhenIncorrectHeightIsPassedThenCanvasShouldNotBeCreated() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage());
 		canvasService.createCanvas(10, 0);
 	}
 
 	@Test
 	public void testCreateCanvasWhenWidthAndHeightAreZeroThenCanvasShouldNotBeCreated() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.INCORRECT_CANVAS_INPUT_VALUE.getMessage());
 		canvasService.createCanvas(0, 0);
 	}
 
@@ -64,7 +64,7 @@ public class CanvasServiceImplTest {
 	@Test
 	public void testCreateCanvasWhenSecondCanvasIsTriedToBeCreatedThenSecondCanvasShouldNotBeCreated() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.CANVAS_ALREADY_PRESENT.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.CANVAS_ALREADY_PRESENT.getMessage());
 		canvasService.createCanvas(20, 4);
 		canvasService.createCanvas(20, 6);
 	}

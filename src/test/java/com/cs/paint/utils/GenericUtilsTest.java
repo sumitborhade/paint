@@ -7,7 +7,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.cs.paint.constants.ApplicationWarningCode;
+import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.model.PointModel;
 import com.cs.paint.orchestrator.ShapeCreationOrchestrator;
@@ -41,7 +41,7 @@ public class GenericUtilsTest {
 	public void testIsIntegerWhenInputStringIsNullThenFalseShouldBeReturned() {
 		String incorrectValue = null;
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.NULL_INPUT.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.NULL_INPUT.getMessage());
 		GenericUtils.isInteger(incorrectValue);
 	}
 
@@ -84,7 +84,7 @@ public class GenericUtilsTest {
 	@Test
 	public void testCheckWhenTheCanvasIsNullThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.CANVAS_NOT_PRESENT.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.CANVAS_NOT_PRESENT.getMessage());
 		CanvasService.destroyCanvas();
 		PointModel point = new PointModel(21, 5);
 		GenericUtils.checkIfThePointIsInsideCanvas(point);

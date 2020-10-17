@@ -8,7 +8,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.cs.paint.constants.ApplicationWarningCode;
+import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.service.creator.impl.CanvasService;
 import com.cs.paint.service.validator.impl.CanvasValidator;
@@ -35,7 +35,7 @@ public class CanvasValidationTest {
 	@Test
 	public void testValidateWhenInputIsWithIncorrectNumberOfParametersThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.INCORRECT_CANVAS_INPUT_PARAMS.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.INCORRECT_CANVAS_INPUT_PARAMS.getMessage());
 		String[] canvasInputArray = "C 100".split(" ");
 		canvasValidation.validate(canvasInputArray);
 	}
@@ -43,7 +43,7 @@ public class CanvasValidationTest {
 	@Test
 	public void testValidateWhenInputWidthIsIncorrectThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.CANVAS_INPUT_SHOULD_BE_INTEGER.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.CANVAS_INPUT_SHOULD_BE_INTEGER.getMessage());
 		String[] canvasInputArray = "C 100 pp".split(" ");
 		canvasValidation.validate(canvasInputArray);
 	}
@@ -51,7 +51,7 @@ public class CanvasValidationTest {
 	@Test
 	public void testValidateWhenInputHeightIsIncorrectThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.CANVAS_INPUT_SHOULD_BE_INTEGER.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.CANVAS_INPUT_SHOULD_BE_INTEGER.getMessage());
 		String[] canvasInputArray = "C pp 100".split(" ");
 		canvasValidation.validate(canvasInputArray);
 	}
@@ -65,7 +65,7 @@ public class CanvasValidationTest {
 	@Test
 	public void testValidateWhenSecondCanvasIsCreatedThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.CANVAS_ALREADY_PRESENT.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.CANVAS_ALREADY_PRESENT.getMessage());
 		CanvasService service = new CanvasService();
 		service.createCanvas(20, 4);
 		String[] canvasInputArray = "C 100 80".split(" ");

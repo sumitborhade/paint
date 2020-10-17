@@ -8,7 +8,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.cs.paint.constants.ApplicationWarningCode;
+import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.orchestrator.ShapeValidatorOrchestrator;
 import com.cs.paint.service.creator.impl.CanvasService;
@@ -34,7 +34,7 @@ public class ValidationOrchestratorTest {
 	public void testTriggerValidationWhenInputIsNullThenExceptionShouldBeThrown() {
 		String inputString = null;
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.NULL_INPUT.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.NULL_INPUT.getMessage());
 		validationOrchestrator.performValidation(inputString);
 	}
 	
@@ -42,7 +42,7 @@ public class ValidationOrchestratorTest {
 	public void testTriggerValidationWhenInputIsIncorrectThenExceptionShouldBeThrown() {
 		String inputString = "P 1 2";
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.INCORRECT_DESIGN_TYPE.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.INCORRECT_DESIGN_TYPE.getMessage());
 		validationOrchestrator.performValidation(inputString);
 	}
 	

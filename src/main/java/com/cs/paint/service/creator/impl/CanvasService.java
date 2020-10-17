@@ -1,6 +1,6 @@
 package com.cs.paint.service.creator.impl;
 
-import com.cs.paint.constants.ApplicationWarningCode;
+import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.service.ShapeService;
 import com.cs.paint.utils.GenericUtils;
@@ -17,7 +17,7 @@ public class CanvasService implements ShapeService {
 				if (canvas == null) {
 					wasCanvasPresentEarlier = false;
 					if (GenericUtils.isValueLessThanOne(width, height)) {
-						throw new CustomException(ApplicationWarningCode.INCORRECT_CANVAS_INPUT_VALUE);
+						throw new CustomException(ApplicationExceptionCode.INCORRECT_CANVAS_INPUT_VALUE);
 					} else {
 						width = width + 2;
 						height = height + 2;
@@ -40,7 +40,7 @@ public class CanvasService implements ShapeService {
 		}
 
 		if (wasCanvasPresentEarlier) {
-			throw new CustomException(ApplicationWarningCode.CANVAS_ALREADY_PRESENT);
+			throw new CustomException(ApplicationExceptionCode.CANVAS_ALREADY_PRESENT);
 		}
 		
 		return true;

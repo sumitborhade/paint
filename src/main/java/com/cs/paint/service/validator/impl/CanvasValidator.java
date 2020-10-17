@@ -1,6 +1,6 @@
 package com.cs.paint.service.validator.impl;
 
-import com.cs.paint.constants.ApplicationWarningCode;
+import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.service.creator.impl.CanvasService;
 import com.cs.paint.utils.GenericUtils;
@@ -18,19 +18,19 @@ public class CanvasValidator implements Validator {
 	
 	private void validateIfCanvasIsAlreadyPresent() {
 		if(CanvasService.getCanvas() != null) {
-			throw new CustomException(ApplicationWarningCode.CANVAS_ALREADY_PRESENT);
+			throw new CustomException(ApplicationExceptionCode.CANVAS_ALREADY_PRESENT);
 		}
 	}
 
 	private void validateIfCanvasHasCorrectNumberOfInputParams(String[] inputArray) {
 		if(inputArray.length != 3) {
-			throw new CustomException(ApplicationWarningCode.INCORRECT_CANVAS_INPUT_PARAMS);
+			throw new CustomException(ApplicationExceptionCode.INCORRECT_CANVAS_INPUT_PARAMS);
 		}
 	}
 	
 	private void validateIfTheCanvasInputPointIsInteger(String[] inputArray) {
 		if(!GenericUtils.isInteger(inputArray[1], inputArray[2]) ) {
-			throw new CustomException(ApplicationWarningCode.CANVAS_INPUT_SHOULD_BE_INTEGER);
+			throw new CustomException(ApplicationExceptionCode.CANVAS_INPUT_SHOULD_BE_INTEGER);
 		}
 	}
 }

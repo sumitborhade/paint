@@ -8,7 +8,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.cs.paint.constants.ApplicationWarningCode;
+import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.service.ShapeService;
 import com.cs.paint.service.creator.impl.CanvasService;
@@ -38,7 +38,7 @@ public class LineValidatorTest {
 	@Test
 	public void testLineValidateWhenInputIsWithIncorrectNumberOfParametersThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.INCORRECT_LINE_INPUT_PARAMS.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.INCORRECT_LINE_INPUT_PARAMS.getMessage());
 		String[] lineInputArray = "L 100".split(" ");
 		lineValidator.validate(lineInputArray);
 	}
@@ -46,7 +46,7 @@ public class LineValidatorTest {
 	@Test
 	public void testLineValidateWhenInputIsIncorrectThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.LINE_INPUT_SHOULD_BE_INTEGER.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.LINE_INPUT_SHOULD_BE_INTEGER.getMessage());
 		String[] lineInputArray = "L 100 pp 200 20".split(" ");
 		lineValidator.validate(lineInputArray);
 	}
@@ -54,7 +54,7 @@ public class LineValidatorTest {
 	@Test
 	public void testLineValidateWhenInputWidthOrHeightIsIncorrectThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.LINE_COORDINATE_OUT_OF_CANVAS.getMessage());
+		thrown.expectMessage(ApplicationExceptionCode.LINE_COORDINATE_OUT_OF_CANVAS.getMessage());
 		String[] lineInputArray = "L 0 0 200 20".split(" ");
 		lineValidator.validate(lineInputArray);
 	}

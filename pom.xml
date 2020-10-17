@@ -3,11 +3,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
-	<groupId>com.example</groupId>
-	<artifactId>graphics</artifactId>
+	<groupId>com.cs</groupId>
+	<artifactId>paint</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>graphics</name>
-	<description>Graphics Project</description>
+	<name>CS Paint Coding Test</name>
+	<description>CS Paint Coding Test</description>
 
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
