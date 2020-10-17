@@ -7,7 +7,7 @@ import com.cs.paint.service.ValidatorService;
 import com.cs.paint.utils.GenericUtils;
 
 /**
- * Single Responsibility purpose: 
+ * Single Responsibility purpose: To make change to this class if the any line validation needs to be changed or added.
  * 
  * @author Sumit Borhade (borhadesumit58@gmail.com)
  */
