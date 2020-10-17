@@ -1,11 +1,5 @@
 # Paint Solution
 
-## Assumptions
-<ol>
-<li>Only one canvas can be created. If another canvas was tried to be created then appropriate message should be displayed to the user</li>
-<li>Only horizontal or vertical line can be drawn</li>
-</ol>
-
 ## Design and development approach
 Before I started developing the code, I read the problem statement thoroughly and created a design on paper first.
 Below are the highlights of it
@@ -16,4 +10,10 @@ Below are the highlights of it
 <li><b>OO Principles:</b> I have used fundamental object oriented principles such as Encapsulation (e.g. in PointModel class), inheritance (e.g. ValidatorService and it's child classes) and Polymorphism (e.g. in ShapeCreationOrchestrator class)</li>
 <li><b>Test Driven Development:</b> I have written the code by writing the test cases first. Intension was to test the logic thoroughly and while doing that 97.4% of code was covered</li>
 <li><b></b></li>
+</ol>
+
+## Problem Assumptions
+<ol>
+<li>Only one canvas can be created. If another canvas was tried to be created then appropriate message should be displayed to the user</li>
+<li>Only horizontal or vertical line can be drawn</li>
 </ol>
