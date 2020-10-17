@@ -27,7 +27,7 @@
 1. Program's execution point is `com.cs.paint.MainClass.java`
 2. Integration test location is `com.cs.paint.orchestrator.ProcessOrchestratorTest`
 
-## Program Execution via Command prompt using maven
+## Program Execution via Command prompt using Maven
 1. Unzip the code and put in a code directory "{Code_Dir}" 
 2. Go to the {Code_Dir} and execute `mvn clean install` to build the code, execute the test case and create a jar file
 3. Execute `java -jar {Code_Dir}/target/paint-1.0.0-SNAPSHOT.jar`
