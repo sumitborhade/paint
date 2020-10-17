@@ -23,7 +23,5 @@
 </ol>
 
 ## Program Execution
-<ol>
-<li>Program's execution point is `com.cs.paint.MainClass.java` `/usr/mydir`</li>
-<li>Integration test location is `com.cs.paint.orchestrator.ProcessOrchestratorTest`</li>
-</ol>
+1. Program's execution point is `com.cs.paint.MainClass.java`
+2. Integration test location is `com.cs.paint.orchestrator.ProcessOrchestratorTest`
