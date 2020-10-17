@@ -4,12 +4,19 @@ import com.cs.paint.model.PointModel;
 import com.cs.paint.service.ShapeService;
 
 /**
- * Single Responsibility purpose: 
+ * Single Responsibility purpose: To make change to this class if the any rectangle related behavior needs changes.
  * 
  * @author Sumit Borhade (borhadesumit58@gmail.com)
  */
 public class RectangleService implements ShapeService {
 
+	/***
+	 * This method accepts input array. It then finds the all four points of a rectangle.
+	 * On the basic of these 4 points, it finds all 4 lines required to draw a rectangle.
+	 * It calls the create shape for line to draw the rectangle.
+	 * 
+	 * @param inputArray
+	 */
 	@Override
 	public boolean createShape(String[] inputArray) {
 		
@@ -32,6 +39,7 @@ public class RectangleService implements ShapeService {
 		String rightVerticalLine = "L " + upperRightPoint.getX() + " " + upperRightPoint.getY() + " "
 				+ lowerRightPoint.getX() + " " + lowerRightPoint.getY();
 		
+		//Line code is reused to draw rectangle
 		line.createShape(upperHorizontalLine.split(" "));
 		line.createShape(lowerHorizontalLine.split(" "));
 		line.createShape(leftVerticalLine.split(" "));

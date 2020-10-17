@@ -6,12 +6,19 @@ import com.cs.paint.model.PointModel;
 import com.cs.paint.service.ShapeService;
 
 /**
- * Single Responsibility purpose: 
+ * Single Responsibility purpose: To make change to this class if the any line related behavior needs changes.
  * 
  * @author Sumit Borhade (borhadesumit58@gmail.com)
  */
 public class LineService implements ShapeService {
 
+	/***
+	 * This method accepts input array. It then finds the start and end point of a line.
+	 * 
+	 * It performs the operation to draw a line within a specified canvas.
+	 * 
+	 * @param inputArray
+	 */
 	@Override
 	public boolean createShape(String[] inputArray) {
 		PointModel startPoint = new PointModel(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));

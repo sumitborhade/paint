@@ -4,13 +4,19 @@ import com.cs.paint.model.PointModel;
 import com.cs.paint.service.ShapeService;
 
 /**
- * Single Responsibility purpose: 
+ * Single Responsibility purpose: To make change to this class if the any bucket fill behavior needs changes.
  * 
  * @author Sumit Borhade (borhadesumit58@gmail.com)
  */
 public class BucketFillService implements ShapeService {
 
-	@Override
+	/***
+	 * This method accepts input array. It then finds the fill point and color to be filled.
+	 * 
+	 * It then calls a method to color the cells as required on a canvas.
+	 * 
+	 * @param inputArray
+	 */
 	public boolean createShape(String[] inputArray) {
 		PointModel fillPoint = new PointModel(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
 		String color = inputArray[3];
@@ -20,6 +26,19 @@ public class BucketFillService implements ShapeService {
 		return true;
 	}
 	
+	/***
+	 * This method is called recursively to fill the specified color for required cells.
+	 * 
+	 * It basically finds and colors the cells by traversing through left, right, up and bottom cells starting from the fill point.
+	 * 
+	 * Exit condition from the recursion is if the existing object or wall of the canvas is found. 
+	 * 
+	 * @param canvas
+	 * @param fillPoint
+	 * @param color
+	 * @param colorToReplace
+	 * @return
+	 */
 	public String[][] colorTheCell(String[][] canvas, PointModel fillPoint, String color, String colorToReplace) {
 		
 		int x = fillPoint.getX();

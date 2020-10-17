@@ -6,7 +6,7 @@ import com.cs.paint.service.ShapeService;
 import com.cs.paint.utils.GenericUtils;
 
 /**
- * Single Responsibility purpose: 
+ * Single Responsibility purpose: To make change to this class if the any canvas related behavior needs changes.
  * 
  * @author Sumit Borhade (borhadesumit58@gmail.com)
  */
@@ -14,6 +14,17 @@ public class CanvasService implements ShapeService {
 
 	private static String[][] canvas;
 	
+	/**
+	 * Canvas is created using input width and height.
+	 * Here, only one canvas can be created for a given run. 
+	 * 
+	 * Idea behind creating only canvas was derived from Singleton design pattern.
+	 * Double locking mechanism, Synchronized block for multithreaded environment to avoid duplicate objects creation have been implemented  
+	 * 
+	 * @param width
+	 * @param height
+	 * @return
+	 */
 	public boolean createCanvas(int width, int height) {
 		boolean wasCanvasPresentEarlier = true;
 
@@ -51,10 +62,20 @@ public class CanvasService implements ShapeService {
 		return true;
 	}
 
+	/**
+	 * Used to return the current canvas.
+	 * 
+	 * @return 2D Canvas array
+	 */
 	public static String[][] getCanvas() {
 		return canvas;
 	}
 
+	/**
+	 * Used for printing the current state of a canvas at any instance. 
+	 * 
+	 * @return
+	 */
 	public static boolean printCanvas() {
 		String[][] canvas = getCanvas();
 		int width = canvas.length;
@@ -70,6 +91,10 @@ public class CanvasService implements ShapeService {
 		return true;
 	}
 
+	/**
+	 * It accepts given input String array and finds width and height.
+	 * As per width & height, it then calls method to create canvas. 
+	 */
 	@Override
 	public boolean createShape(String[] inputArray) {
 		int width = Integer.parseInt(inputArray[1]);
@@ -78,6 +103,9 @@ public class CanvasService implements ShapeService {
 		return true;
 	}
 	
+	/**
+	 * This method is called when application needs to be terminated gracefully.
+	 */
 	public static void destroyCanvas() {
 		canvas = null;
 	}
