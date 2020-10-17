@@ -21,12 +21,12 @@ public class ShapeCreatorFactoryTest {
 	public void testGetShapeEntityWhenInputTypeIsNullThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
 		thrown.expectMessage(ApplicationExceptionCode.NULL_INPUT.getMessage());
-		ShapeCreatorFactory.getShapeEntity(null);
+		ShapeCreatorFactory.getShapeCreatorEntity(null);
 	}
 	
 	@Test
 	public void testGetShapeEntityWhenInputTypeIsCThenCanvasShouldBeReturned() {
-		ShapeService canvasShape = ShapeCreatorFactory.getShapeEntity("c");
+		ShapeService canvasShape = ShapeCreatorFactory.getShapeCreatorEntity("c");
 		assertTrue("In this test, shape should be of type canvas", canvasShape instanceof CanvasService);
 	}
 

@@ -17,7 +17,7 @@ public class ValidationFactoryTest {
 	public void testGetValidationEntityWhenInputTypeIsNullThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
 		thrown.expectMessage(ApplicationExceptionCode.NULL_INPUT.getMessage());
-		ShapeValidatorFactory.getValidationEntity(null);
+		ShapeValidatorFactory.getValidatorEntity(null);
 	}
 
 }

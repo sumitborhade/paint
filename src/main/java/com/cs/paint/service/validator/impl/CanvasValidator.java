@@ -2,11 +2,16 @@ package com.cs.paint.service.validator.impl;
 
 import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
-import com.cs.paint.service.Validator;
+import com.cs.paint.service.ValidatorService;
 import com.cs.paint.service.creator.impl.CanvasService;
 import com.cs.paint.utils.GenericUtils;
 
-public class CanvasValidator implements Validator {
+/**
+ * Single Responsibility purpose: 
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ */
+public class CanvasValidator implements ValidatorService {
 
 	@Override
 	public boolean validate(String[] inputArray) {

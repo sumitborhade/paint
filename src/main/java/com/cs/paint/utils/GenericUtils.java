@@ -10,8 +10,20 @@ import com.cs.paint.exception.CustomException;
 import com.cs.paint.model.PointModel;
 import com.cs.paint.service.creator.impl.CanvasService;
 
+/**
+ * Single Responsibility purpose: To add only common utility method(s)
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ */
 public class GenericUtils {
 	
+	/**
+	 * As the utility methods inside the class are static,
+	 * the object of this class is not required.
+	 * 
+	 * Making the constructor private to refrain creation of instance.
+	 * 
+	 */
 	private GenericUtils() {
 	}
 

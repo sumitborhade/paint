@@ -3,6 +3,11 @@ package com.cs.paint.service.creator.impl;
 import com.cs.paint.model.PointModel;
 import com.cs.paint.service.ShapeService;
 
+/**
+ * Single Responsibility purpose: 
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ */
 public class RectangleService implements ShapeService {
 
 	@Override

@@ -11,13 +11,13 @@ import org.junit.rules.ExpectedException;
 import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.service.ShapeService;
-import com.cs.paint.service.Validator;
+import com.cs.paint.service.ValidatorService;
 import com.cs.paint.service.creator.impl.CanvasService;
 import com.cs.paint.service.validator.impl.BucketFillValidator;
 
 public class BucketValidationTest {
 
-	private Validator bucketValidation;
+	private ValidatorService bucketValidation;
 	
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();

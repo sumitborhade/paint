@@ -1,9 +1,12 @@
 package com.cs.paint.exception;
 
 /**
+ * Single Responsibility purpose: Adding new Application Exception code
+ * 
  * This enum contains the list of all the application status codes. 
  * The entries inside will be used to highlight any warning/exception 
  *
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
  */
 public enum ApplicationExceptionCode {
 	

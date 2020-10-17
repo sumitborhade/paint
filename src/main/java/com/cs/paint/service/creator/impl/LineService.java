@@ -5,6 +5,11 @@ import com.cs.paint.exception.CustomException;
 import com.cs.paint.model.PointModel;
 import com.cs.paint.service.ShapeService;
 
+/**
+ * Single Responsibility purpose: 
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ */
 public class LineService implements ShapeService {
 
 	@Override

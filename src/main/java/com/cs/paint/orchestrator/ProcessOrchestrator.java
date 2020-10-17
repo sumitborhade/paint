@@ -1,5 +1,10 @@
 package com.cs.paint.orchestrator;
 
+/**
+ * Single Responsibility purpose: To modify if new step like Validation and Creation need to be added
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ */
 public class ProcessOrchestrator {
 
 	/**

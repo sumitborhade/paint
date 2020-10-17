@@ -3,23 +3,21 @@ package com.cs.paint.service.validator.impl;
 import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.model.PointModel;
-import com.cs.paint.service.Validator;
+import com.cs.paint.service.ValidatorService;
 import com.cs.paint.utils.GenericUtils;
 
-public class LineValidator implements Validator {
+/**
+ * Single Responsibility purpose: 
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ */
+public class LineValidator implements ValidatorService {
 
 	@Override
 	public boolean validate(String[] inputArray) {
 		validateIfNumberOfParamsAreCorrect(inputArray);
 		validateIfThePointsAreInteger(inputArray);
 		validateIfTheLinePointsInsideCanvas(inputArray);
-		
-//		Point startPoint = new Point(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
-//		Point endPoint = new Point(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[4]));
-//		if (startPoint.getX() != endPoint.getX() && startPoint.getY() != endPoint.getY()) {
-//			isLineCreated = false;
-//			throw new CustomException(ApplicationWarningCode.INVALID_LINE_POINTS);
-//		}
 		return true;
 	}
 

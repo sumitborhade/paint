@@ -5,6 +5,11 @@ import com.cs.paint.exception.CustomException;
 import com.cs.paint.service.ShapeService;
 import com.cs.paint.utils.GenericUtils;
 
+/**
+ * Single Responsibility purpose: 
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ */
 public class CanvasService implements ShapeService {
 
 	private static String[][] canvas;
