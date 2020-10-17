@@ -1,4 +1,4 @@
-# Paint Solution
+# CS Paint Solution
 
 ## Design and Development Approach
 
