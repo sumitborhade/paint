@@ -26,7 +26,13 @@ public class GenericUtils {
 	 */
 	private GenericUtils() {
 	}
-
+	
+	/**
+	 * This method accepts the one or many string numbers and checks if these strings are numeric or not.
+	 * 
+	 * @param stringNumbers
+	 * @return
+	 */
 	public static boolean isInteger(String... stringNumbers) {
 		boolean isInteger = false;
 		if (stringNumbers != null) {
@@ -48,6 +54,12 @@ public class GenericUtils {
 		return isInteger;
 	}
 
+	/***
+	 * This method accepts the one or many integers and checks if these integers are less than one.
+	 * 
+	 * @param intValues
+	 * @return
+	 */
 	public static boolean isValueLessThanOne(Integer... intValues) {
 		List<Integer> intValuesLessThanOneList= new ArrayList<>();
 		
@@ -64,6 +76,12 @@ public class GenericUtils {
 		return intValuesLessThanOneList.size() > 0;
 	}
 	
+	/***
+	 * This method accepts one or more points and return false if one of the them outside canvas.
+	 *  
+	 * @param points
+	 * @return
+	 */
 	public static boolean checkIfThePointIsInsideCanvas(PointModel... points) {
 		boolean isPointInsideCanvas = true;
 		String[][] canvas = CanvasService.getCanvas();
