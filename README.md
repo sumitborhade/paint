@@ -16,12 +16,18 @@
 <li>Only horizontal or vertical line can be drawn</li>
 </ol>
 
-## Technology stack
+## Tool/Technology used
 <ol>
 <li>Java 8</li>
 <li>Maven 3.6.0</li>
+<li>Eclipse</li>
 </ol>
 
-## Program Execution
+## Program Execution via IDE: 
 1. Program's execution point is `com.cs.paint.MainClass.java`
 2. Integration test location is `com.cs.paint.orchestrator.ProcessOrchestratorTest`
+
+## Program Execution via Command prompt using maven
+1. Unzip the code and put in a code directory (e.g. c:\work\code\paint)
+2. Execute `mvn clean install` to build the code, execute the test case and create a jar file
+3.  
