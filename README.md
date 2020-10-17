@@ -1,6 +1,6 @@
 # Paint Solution
 
-## Design and development approach
+## Design and Development Approach
 
 <ol>
 <li><b>Single Responsibility:</b> Code has been written in such a way that there is only one reason to modify the class and same has been specified in the comments mentioned in the classes</li>
