@@ -7,7 +7,7 @@ import com.cs.paint.orchestrator.ProcessOrchestrator;
 import com.cs.paint.service.creator.impl.CanvasService;
 
 /**
- * This is a main class and it has the entry point for Application.
+ * Single Responsibility purpose: This is a main class and it has the entry point for Application.
  * 
  * @author Sumit Borhade (borhadesumit58@gmail.com)
  * 
