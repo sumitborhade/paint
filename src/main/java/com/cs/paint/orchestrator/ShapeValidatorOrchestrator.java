@@ -34,7 +34,7 @@ public class ShapeValidatorOrchestrator {
 		if(validation == null) {
 			throw new CustomException(ApplicationExceptionCode.INCORRECT_DESIGN_TYPE);
 		}
-		
+		//Dynamic polymorphism
 		return validation.validate(inputArray);
 	}
 	

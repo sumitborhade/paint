@@ -37,6 +37,7 @@ public class ShapeCreationOrchestrator {
 			throw new CustomException(ApplicationExceptionCode.INCORRECT_DESIGN_TYPE);
 		}
 		
+		//Dynamic polymorphism
 		shape.createShape(inputArray);
 		CanvasService.printCanvas();
 		
