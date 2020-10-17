@@ -12,7 +12,7 @@ Below are the highlights of it
 <li><b></b></li>
 </ol>
 
-## Problem Assumptions
+## Development Assumptions
 <ol>
 <li>Only one canvas can be created. If another canvas was tried to be created then appropriate message should be displayed to the user</li>
 <li>Only horizontal or vertical line can be drawn</li>
