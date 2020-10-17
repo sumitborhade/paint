@@ -31,6 +31,10 @@ public class RectangleValidation implements Validator {
 	private void validateIfRectanglePointsAreWithinCanvas(String[] inputArray) {
 		Point startPoint = new Point(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
 		Point endPoint = new Point(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[4]));
-		GenericUtils.checkIfThePointIsInsideCanvas(startPoint, endPoint);
+		boolean isRectanglePointsAreWithinCanvas = GenericUtils.checkIfThePointIsInsideCanvas(startPoint, endPoint);
+		
+		if(!isRectanglePointsAreWithinCanvas) {
+			throw new CustomException(ApplicationWarningCode.RECTANGLE_COORDINATE_OUT_OF_CANVAS);
+		}
 	}
 }

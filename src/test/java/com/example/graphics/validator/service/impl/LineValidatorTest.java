@@ -12,11 +12,12 @@ import com.example.graphics.constants.ApplicationWarningCode;
 import com.example.graphics.creator.service.ShapeCreator;
 import com.example.graphics.creator.service.impl.CanvasService;
 import com.example.graphics.exception.CustomException;
-import com.example.graphics.orchestrator.ShapeCreationOrchestrator;
 import com.example.graphics.validator.service.Validator;
 
-public class LineValidationTest {
+public class LineValidatorTest {
 
+	private Validator lineValidator;
+	
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();
 	
@@ -25,11 +26,12 @@ public class LineValidationTest {
 		CanvasService.destroyCanvas();
 		ShapeCreator canvasCreator = new CanvasService();
 		canvasCreator.createShape("C 20 4".split(" "));
+		lineValidator = new LineValidator();
 	}
 
 	@After
 	public void tearDown() throws Exception {
-		CanvasService.destroyCanvas();
+		lineValidator  = null;
 	}
 	
 	@Test
@@ -37,8 +39,7 @@ public class LineValidationTest {
 		thrown.expect(CustomException.class);
 		thrown.expectMessage(ApplicationWarningCode.INCORRECT_LINE_INPUT_PARAMS.getMessage());
 		String[] lineInputArray = "L 100".split(" ");
-		Validator lineValidation = new LineValidation();
-		lineValidation.validate(lineInputArray);
+		lineValidator.validate(lineInputArray);
 	}
 	
 	@Test
@@ -46,8 +47,7 @@ public class LineValidationTest {
 		thrown.expect(CustomException.class);
 		thrown.expectMessage(ApplicationWarningCode.LINE_INPUT_SHOULD_BE_INTEGER.getMessage());
 		String[] lineInputArray = "L 100 pp 200 20".split(" ");
-		Validator lineValidation = new LineValidation();
-		lineValidation.validate(lineInputArray);
+		lineValidator.validate(lineInputArray);
 	}
 	
 	@Test
@@ -55,19 +55,13 @@ public class LineValidationTest {
 		thrown.expect(CustomException.class);
 		thrown.expectMessage(ApplicationWarningCode.LINE_COORDINATE_OUT_OF_CANVAS.getMessage());
 		String[] lineInputArray = "L 0 0 200 20".split(" ");
-		Validator lineValidation = new LineValidation();
-		lineValidation.validate(lineInputArray);
+		lineValidator.validate(lineInputArray);
 	}
 	
 	@Test
 	public void testLineValidateWhenInputIsCorrectThenValidationShouldBeSucessful() {
-		if (CanvasService.getCanvas() == null) {
-			ShapeCreationOrchestrator shapeCreationOrchestrator = new ShapeCreationOrchestrator();
-			shapeCreationOrchestrator.createShape("C 20 4");
-		}
 		String[] lineInputArray = "L 2 2 8 2".split(" ");
-		Validator lineValidation = new LineValidation();
-		assertTrue("Line validation should be successful.", lineValidation.validate(lineInputArray));
+		assertTrue("Line validation should be successful.", lineValidator.validate(lineInputArray));
 	}
 
 }

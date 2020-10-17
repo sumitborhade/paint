@@ -6,7 +6,7 @@ import com.example.graphics.model.Point;
 import com.example.graphics.utils.GenericUtils;
 import com.example.graphics.validator.service.Validator;
 
-public class LineValidation implements Validator {
+public class LineValidator implements Validator {
 
 	@Override
 	public boolean validate(String[] inputArray) {

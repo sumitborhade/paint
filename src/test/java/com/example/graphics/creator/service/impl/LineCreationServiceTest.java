@@ -23,6 +23,9 @@ public class LineCreationServiceTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		CanvasService.destroyCanvas();
+		ShapeCreator canvas = new CanvasService();
+		canvas.createShape("C 20 4".split(" "));
 		line = new LineCreationService();
 	}
 
@@ -40,9 +43,6 @@ public class LineCreationServiceTest {
 	
 	@Test
 	public void testCreateShapeWhenLinePointsAreValidThenMethodShouldReturnTrue() {
-		CanvasService.destroyCanvas();
-		ShapeCreator canvas = new CanvasService();
-		canvas.createShape("C 20 4".split(" "));
 		assertTrue("Line should be created.", line.createShape("L 1 2 6 2".split(" ")));
 	}
 

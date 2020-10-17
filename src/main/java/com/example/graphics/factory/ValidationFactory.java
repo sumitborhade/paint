@@ -8,7 +8,7 @@ import com.example.graphics.exception.CustomException;
 import com.example.graphics.validator.service.Validator;
 import com.example.graphics.validator.service.impl.BucketFillValidation;
 import com.example.graphics.validator.service.impl.CanvasValidation;
-import com.example.graphics.validator.service.impl.LineValidation;
+import com.example.graphics.validator.service.impl.LineValidator;
 import com.example.graphics.validator.service.impl.RectangleValidation;
 
 public class ValidationFactory {
@@ -17,7 +17,7 @@ public class ValidationFactory {
 	
 	static {
 		validationEntitiesMap.put("C", new CanvasValidation());
-		validationEntitiesMap.put("L", new LineValidation());
+		validationEntitiesMap.put("L", new LineValidator());
 		validationEntitiesMap.put("R", new RectangleValidation());
 		validationEntitiesMap.put("B", new BucketFillValidation());
 	}

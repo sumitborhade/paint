@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationWarningCode;
+import com.example.graphics.creator.service.ShapeCreator;
 import com.example.graphics.creator.service.impl.CanvasService;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.validator.service.Validator;
@@ -23,6 +24,9 @@ public class RectangleValidationTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		CanvasService.destroyCanvas();
+		ShapeCreator canvas = new CanvasService();
+		canvas.createShape("C 20 4".split(" "));
 		rectangleValidation = new RectangleValidation();
 	}
 

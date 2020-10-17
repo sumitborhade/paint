@@ -9,11 +9,9 @@ import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
 import com.example.graphics.constants.ApplicationWarningCode;
-import com.example.graphics.creator.service.impl.BucketFillCreationService;
 import com.example.graphics.creator.service.impl.CanvasService;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.validator.service.Validator;
-import com.example.graphics.validator.service.impl.CanvasValidation;
 
 public class CanvasValidationTest {
 
@@ -24,8 +22,8 @@ public class CanvasValidationTest {
 	
 	@Before
 	public void setUp() throws Exception {
-		canvasValidation = new CanvasValidation();
 		CanvasService.destroyCanvas();
+		canvasValidation = new CanvasValidation();
 	}
 
 	@After
@@ -67,11 +65,9 @@ public class CanvasValidationTest {
 	public void testValidateWhenSecondCanvasIsCreatedThenExceptionShouldBeThrown() {
 		thrown.expect(CustomException.class);
 		thrown.expectMessage(ApplicationWarningCode.CANVAS_ALREADY_PRESENT.getMessage());
-		
-		String[] canvasInputArray = "C 100 80".split(" ");
 		CanvasService service = new CanvasService();
 		service.createCanvas(20, 4);
-		Validator canvasValidation = new CanvasValidation();
+		String[] canvasInputArray = "C 100 80".split(" ");
 		canvasValidation.validate(canvasInputArray);
 	}
 
