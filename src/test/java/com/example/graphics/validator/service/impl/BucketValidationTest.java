@@ -1,6 +1,5 @@
 package com.example.graphics.validator.service.impl;
 
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
@@ -14,7 +13,6 @@ import com.example.graphics.creator.service.ShapeCreator;
 import com.example.graphics.creator.service.impl.CanvasService;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.validator.service.Validator;
-import com.example.graphics.validator.service.impl.BucketFillValidation;
 
 public class BucketValidationTest {
 
