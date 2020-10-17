@@ -1,5 +1,6 @@
 package com.example.graphics.validator.service.impl;
 
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.After;
@@ -56,6 +57,14 @@ public class BucketValidationTest {
 		thrown.expect(CustomException.class);
 		thrown.expectMessage(ApplicationWarningCode.BUCKET_FILL_INPUT_SHOULD_BE_INTEGER.getMessage());
 		String[] bucketInputArray = "B pp 100 C".split(" ");
+		bucketValidation.validate(bucketInputArray);
+	}
+	
+	@Test
+	public void testBucketValidateWhenBucketFillPointIsNotInCanavsThenExceptionShouldBeThrown() {
+		thrown.expect(CustomException.class);
+		thrown.expectMessage(ApplicationWarningCode.BUCKET_FILL_COORDINATE_OUT_OF_CANVAS.getMessage());
+		String[] bucketInputArray = "B 24 1 C".split(" ");
 		bucketValidation.validate(bucketInputArray);
 	}
 	

@@ -23,7 +23,8 @@ public class BucketFillCreationService implements ShapeCreator {
 		int canvasInternalWidth = canvas.length - 2;
 		int canvasInternalHeight = canvas[0].length - 2;
 
-		if (!canvas[x][y].equals(colorToReplace) || x <= 0 || y <= 0 || x > canvasInternalWidth || y > canvasInternalHeight) {
+		if (!canvas[x][y].equals(colorToReplace) || x <= 0 || y <= 0 || x > canvasInternalWidth
+				|| y > canvasInternalHeight) {
 			return canvas;
 		}
 

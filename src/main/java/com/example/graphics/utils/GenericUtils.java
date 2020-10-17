@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import com.example.graphics.constants.ApplicationWarningCode;
 import com.example.graphics.creator.service.impl.CanvasService;
@@ -50,12 +49,6 @@ public class GenericUtils {
 		return intValuesLessThanOneList.size() > 0;
 	}
 	
-	public static boolean isStringValueLessThanOne(String... stringValues) {
-		List<Integer> integerList = Stream.of(stringValues).map(s -> Integer.parseInt(s)).collect(Collectors.toList());
-		Integer[] intValues = integerList.toArray(new Integer[integerList.size()]);
-		return isValueLessThanOne(intValues);
-	}
-
 	public static boolean checkIfThePointIsInsideCanvas(Point... points) {
 		boolean isPointInsideCanvas = true;
 		String[][] canvas = CanvasService.getCanvas();

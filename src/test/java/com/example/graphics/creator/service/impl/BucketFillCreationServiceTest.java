@@ -5,11 +5,10 @@ import static org.junit.Assert.assertTrue;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
+import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
-import com.example.graphics.constants.ApplicationWarningCode;
 import com.example.graphics.creator.service.ShapeCreator;
-import com.example.graphics.exception.CustomException;
 
 public class BucketFillCreationServiceTest {
 
@@ -20,6 +19,9 @@ public class BucketFillCreationServiceTest {
 	
 	@Before
 	public void setUp() throws Exception {
+		CanvasService.destroyCanvas();
+		ShapeCreator canvas = new CanvasService();
+		canvas.createShape("C 20 4".split(" "));
 		bucketFill = new BucketFillCreationService();
 	}
 
@@ -28,19 +30,9 @@ public class BucketFillCreationServiceTest {
 		bucketFill = null;
 	}
 
-//	@Test
-	public void testCreateShapeWhenLinePointsAreInvalidThenExceptionShouldBeThrown() {
-		thrown.expect(CustomException.class);
-		thrown.expectMessage(ApplicationWarningCode.INVALID_LINE_POINTS.getMessage());
-		bucketFill.createShape("L 1 2 3 4".split(" "));
-	}
-	
-//	@Test
+	@Test
 	public void testCreateShapeWhenLinePointsAreValidThenMethodShouldReturnTrue() {
-		CanvasService.destroyCanvas();
-		ShapeCreator canvas = new CanvasService();
-		canvas.createShape("C 20 4".split(" "));
-		assertTrue("Line should be created.", bucketFill.createShape("L 1 2 6 2".split(" ")));
+		assertTrue("Bucket fill should be performed.", bucketFill.createShape("B 1 2 c".split(" ")));
 	}
 
 }

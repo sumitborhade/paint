@@ -13,6 +13,13 @@ public class LineValidator implements Validator {
 		validateIfNumberOfParamsAreCorrect(inputArray);
 		validateIfThePointsAreInteger(inputArray);
 		validateIfTheLinePointsInsideCanvas(inputArray);
+		
+//		Point startPoint = new Point(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
+//		Point endPoint = new Point(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[4]));
+//		if (startPoint.getX() != endPoint.getX() && startPoint.getY() != endPoint.getY()) {
+//			isLineCreated = false;
+//			throw new CustomException(ApplicationWarningCode.INVALID_LINE_POINTS);
+//		}
 		return true;
 	}
 
