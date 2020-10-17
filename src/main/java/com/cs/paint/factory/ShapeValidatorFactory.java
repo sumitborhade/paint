@@ -13,6 +13,9 @@ import com.cs.paint.service.validator.impl.RectangleValidator;
 
 public class ShapeValidatorFactory {
 	
+	private ShapeValidatorFactory() {
+	}
+	
 	private static Map<String, Validator> validationEntitiesMap = new HashMap<>();
 	
 	static {

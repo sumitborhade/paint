@@ -13,6 +13,9 @@ import com.cs.paint.service.creator.impl.RectangleService;
 
 public class ShapeCreatorFactory {
 	
+	private ShapeCreatorFactory() {
+	}
+	
 	private static Map<String, ShapeService> validationEntitiesMap = new HashMap<>();
 	
 	static {

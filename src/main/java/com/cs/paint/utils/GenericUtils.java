@@ -11,6 +11,9 @@ import com.cs.paint.model.PointModel;
 import com.cs.paint.service.creator.impl.CanvasService;
 
 public class GenericUtils {
+	
+	private GenericUtils() {
+	}
 
 	public static boolean isInteger(String... stringNumbers) {
 		boolean isInteger = false;
