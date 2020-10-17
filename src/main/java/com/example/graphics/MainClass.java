@@ -2,6 +2,7 @@ package com.example.graphics;
 
 import java.util.Scanner;
 
+import com.example.graphics.creator.service.impl.CanvasCreationService;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.orchestrator.ShapeCreationOrchestrator;
 import com.example.graphics.orchestrator.ValidationOrchestrator;
@@ -22,6 +23,7 @@ public class MainClass {
 
 					//Exit condition
 					if(inputString != null && inputString.equalsIgnoreCase("q")) {
+						CanvasCreationService.destroyCanvas();
 						break;
 					}
 					

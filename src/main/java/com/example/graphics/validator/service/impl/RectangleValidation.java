@@ -1,10 +1,6 @@
 package com.example.graphics.validator.service.impl;
 
-import java.util.Arrays;
-import java.util.stream.Stream;
-
 import com.example.graphics.constants.ApplicationWarningCode;
-import com.example.graphics.creator.service.impl.CanvasCreationService;
 import com.example.graphics.exception.CustomException;
 import com.example.graphics.model.Point;
 import com.example.graphics.utils.GenericUtils;
@@ -16,15 +12,7 @@ public class RectangleValidation implements Validator {
 	public boolean validate(String[] inputArray) {
 		validateIfNumberOfParamsAreCorrect(inputArray);
 		validateIfThePointsAreInteger(inputArray);
-		
-		Point startPoint = new Point(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
-		Point endPoint = new Point(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[4]));
-		GenericUtils.checkIfThePointIsInsideCanvas(startPoint, endPoint);
-		
-		int[] dimensions = Stream.of(Arrays.copyOfRange(inputArray, 1, inputArray.length)).mapToInt(Integer::parseInt)
-				.toArray();
-		validateIfRectangleIsWithinCanvas(dimensions);
-
+		validateIfRectanglePointsAreWithinCanvas(inputArray);
 		return true;
 	}
 	
@@ -40,16 +28,9 @@ public class RectangleValidation implements Validator {
 		}
 	}
 
-	private boolean validateIfRectangleIsWithinCanvas(int[] dimensions) {
-		String[][] canvas = CanvasCreationService.getCanvas();
-		int canvasWidth = canvas.length - 2;
-		int canvasHeight = canvas[0].length - 2;
-
-		if (dimensions[0] > canvasWidth || dimensions[2] > canvasWidth || dimensions[1] > canvasHeight
-				|| dimensions[3] > canvasHeight) {
-			throw new CustomException(ApplicationWarningCode.RECTANGLE_CO_ORDS_OUT_OF_CANVAS);
-		}
-
-		return true;
+	private void validateIfRectanglePointsAreWithinCanvas(String[] inputArray) {
+		Point startPoint = new Point(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
+		Point endPoint = new Point(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[4]));
+		GenericUtils.checkIfThePointIsInsideCanvas(startPoint, endPoint);
 	}
 }

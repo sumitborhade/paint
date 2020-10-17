@@ -3,7 +3,7 @@ package com.example.graphics.creator.service.impl;
 import com.example.graphics.creator.service.ShapeCreator;
 import com.example.graphics.model.Point;
 
-public class BucketCreationService implements ShapeCreator {
+public class BucketFillCreationService implements ShapeCreator {
 
 	@Override
 	public boolean createShape(String[] inputArray) {

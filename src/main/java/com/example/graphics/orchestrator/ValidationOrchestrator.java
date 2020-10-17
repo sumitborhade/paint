@@ -20,9 +20,7 @@ public class ValidationOrchestrator {
 			throw new CustomException(ApplicationWarningCode.INCORRECT_DESIGN_TYPE);
 		}
 		
-		validation.validate(inputArray);
-		
-		return true;
+		return validation.validate(inputArray);
 	}
 	
 	

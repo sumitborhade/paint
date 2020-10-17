@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.example.graphics.constants.ApplicationWarningCode;
 import com.example.graphics.creator.service.ShapeCreator;
-import com.example.graphics.creator.service.impl.BucketCreationService;
+import com.example.graphics.creator.service.impl.BucketFillCreationService;
 import com.example.graphics.creator.service.impl.CanvasCreationService;
 import com.example.graphics.creator.service.impl.LineCreationService;
 import com.example.graphics.creator.service.impl.RectangleCreationService;
@@ -19,7 +19,7 @@ public class ShapeCreatorFactory {
 		validationEntitiesMap.put("C", new CanvasCreationService());
 		validationEntitiesMap.put("L", new LineCreationService());
 		validationEntitiesMap.put("R", new RectangleCreationService());
-		validationEntitiesMap.put("B", new BucketCreationService());
+		validationEntitiesMap.put("B", new BucketFillCreationService());
 	}
 	
 	public static ShapeCreator getShapeEntity(String inputType) {

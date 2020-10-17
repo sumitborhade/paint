@@ -12,12 +12,7 @@ public class LineValidation implements Validator {
 	public boolean validate(String[] inputArray) {
 		validateIfNumberOfParamsAreCorrect(inputArray);
 		validateIfThePointsAreInteger(inputArray);
-		validateIfThePointsCoordinatesAreGreaterThanZero(inputArray);
-		
-		Point startPoint = new Point(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
-		Point endPoint = new Point(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[4]));
-		GenericUtils.checkIfThePointIsInsideCanvas(startPoint, endPoint);
-
+		validateIfTheLinePointsInsideCanvas(inputArray);
 		return true;
 	}
 
@@ -33,10 +28,13 @@ public class LineValidation implements Validator {
 		}
 	}
 	
-	private void validateIfThePointsCoordinatesAreGreaterThanZero(String[] inputArray) {
-		if(GenericUtils.isStringValueLessThanOne(inputArray[1], inputArray[2], inputArray[3], inputArray[4])) {
-			throw new CustomException(ApplicationWarningCode.INCORRECT_LINE_INPUT_VALUE);
+	private void validateIfTheLinePointsInsideCanvas(String[] inputArray) {
+		Point startPoint = new Point(Integer.parseInt(inputArray[1]), Integer.parseInt(inputArray[2]));
+		Point endPoint = new Point(Integer.parseInt(inputArray[3]), Integer.parseInt(inputArray[4]));
+		boolean isLinePointsAreInsideCanvas = GenericUtils.checkIfThePointIsInsideCanvas(startPoint, endPoint);
+		
+		if(!isLinePointsAreInsideCanvas) {
+			throw new CustomException(ApplicationWarningCode.LINE_COORDINATE_OUT_OF_CANVAS);
 		}
 	}
-	
 }
