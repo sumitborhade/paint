@@ -26,12 +26,12 @@ Test case names have been written in BDD convention to make it easier to read an
 </ol>
 
 ## Program Execution 
-1.  Unzip the code and put in a code directory "{Code_Dir}" 
-2. Import the project in Eclipse or any other IDE
+Unzip the code and put in a code directory "{Code_Dir}" 
 
-### Program Execution via IDE: 
-1. Program's execution point is `com.cs.paint.MainClass.java`
-2. Integration test location is `com.cs.paint.orchestrator.ProcessOrchestratorTest` (Inputs to this test case it currently same as that of inputs mentioned in the problem statement and can be modified for testing purpose)
+### Program Execution via IDE:
+1. Import the project in Eclipse or any other IDE 
+2. Program's execution point is `com.cs.paint.MainClass.java`
+3. Integration test location is `com.cs.paint.orchestrator.ProcessOrchestratorTest` (Inputs to this test case it currently same as that of inputs mentioned in the problem statement and can be modified for testing purpose)
 
 ### Program Execution via Command prompt using Maven
 1. Go to the {Code_Dir} and execute `mvn clean install` to build the code, execute the test case and create a jar file
