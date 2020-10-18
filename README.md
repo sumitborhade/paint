@@ -1,3 +1,4 @@
+
 # CS Paint Solution
 
 ## Design and Development Approach
@@ -7,7 +8,8 @@
 <li><b>Open-Close Principle:</b> It is used to ensure that the application is close for modification but open for extension. e.g. Once line shape is created, it will not be touched if the new shape needs to be created. However new shape can extend Shape interface to create new shape</li>
 <li><b>Design Patterns:</b> I have used  <u>Factory design pattern </u> for creating factories for Shape Creators and Validators, as I wanted to avoid if-else conditions as well as to segregate the logic in as required for a particular class. I have modified <u>Singleton design pattern</u> (without changing the core objective of Singleton) while creating Canvas as only one canvas should be created. Added the comments in the code to elaborate more</li>
 <li><b>OO Principles:</b> I have used fundamental object oriented principles such as Encapsulation (e.g. in PointModel class), inheritance (e.g. ValidatorService and it's child classes) and Polymorphism (e.g. in ShapeCreationOrchestrator class)</li>
-<li><b>Test Driven Development:</b> I have written the code by writing the test cases first. Primary intension was to test the logic thoroughly and while doing that 97.4% of lines of code was covered</li>
+<li><b>Test Driven Development:</b> I have written the code by writing the test cases first. Primary intension was to test the logic thoroughly and while doing that 97.4% of lines of code was covered. 
+Test case names have been written in BDD convention to make it easier to read and understand the rationale behind it</li>
 </ol>
 
 ## Problem Assumptions
@@ -22,12 +24,14 @@
 <li>Maven 3.6.0</li>
 <li>Eclipse</li>
 </ol>
+## Program Execution 
+1.  Unzip the code and put in a code directory "{Code_Dir}" 
+2. Import the project in Eclipse or any other IDE
 
-## Program Execution via IDE: 
+### Program Execution via IDE: 
 1. Program's execution point is `com.cs.paint.MainClass.java`
-2. Integration test location is `com.cs.paint.orchestrator.ProcessOrchestratorTest`
+2. Integration test location is `com.cs.paint.orchestrator.ProcessOrchestratorTest` (Inputs to this test case it currently same as that of inputs mentioned in the problem statement and can be modified for testing purpose)
 
-## Program Execution via Command prompt using Maven
-1. Unzip the code and put in a code directory "{Code_Dir}" 
-2. Go to the {Code_Dir} and execute `mvn clean install` to build the code, execute the test case and create a jar file
-3. Execute `java -jar {Code_Dir}/target/paint-1.0.0-SNAPSHOT.jar`
+### Program Execution via Command prompt using Maven
+1. Go to the {Code_Dir} and execute `mvn clean install` to build the code, execute the test case and create a jar file
+2. Execute `java -jar {Code_Dir}/target/paint-1.0.0-SNAPSHOT.jar`
