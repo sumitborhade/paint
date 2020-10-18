@@ -22,7 +22,7 @@ Test case names have been written in BDD convention to make it easier to read an
 <ol>
 <li>Java 8</li>
 <li>Maven 3.6.0</li>
-<li>Eclipse</li>
+<li>Eclipse 4.10.0</li>
 </ol>
 
 ## Program Execution 
