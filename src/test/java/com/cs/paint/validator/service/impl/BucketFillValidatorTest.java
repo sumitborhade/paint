@@ -15,7 +15,13 @@ import com.cs.paint.service.ValidatorService;
 import com.cs.paint.service.creator.impl.CanvasService;
 import com.cs.paint.service.validator.impl.BucketFillValidator;
 
-public class BucketValidationTest {
+/**
+ * Single Responsibility purpose: To test BucketFillValidator.java 
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ * 
+ */
+public class BucketFillValidatorTest {
 
 	private ValidatorService bucketValidation;
 	

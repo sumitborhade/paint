@@ -13,7 +13,13 @@ import com.cs.paint.exception.CustomException;
 import com.cs.paint.orchestrator.ShapeValidatorOrchestrator;
 import com.cs.paint.service.creator.impl.CanvasService;
 
-public class ValidationOrchestratorTest {
+/**
+ * Single Responsibility purpose: To test ShapeValidatorOrchestrator.java
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ * 
+ */
+public class ShapeValidatorOrchestratorTest {
 
 	private ShapeValidatorOrchestrator validationOrchestrator;
 

@@ -12,6 +12,12 @@ import com.cs.paint.factory.ShapeCreatorFactory;
 import com.cs.paint.service.ShapeService;
 import com.cs.paint.service.creator.impl.CanvasService;
 
+/**
+ * Single Responsibility purpose: To test ShapeCreatorFactory.java
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ * 
+ */
 public class ShapeCreatorFactoryTest {
 
 	@Rule

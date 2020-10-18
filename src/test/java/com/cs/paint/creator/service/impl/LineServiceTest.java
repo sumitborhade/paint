@@ -14,7 +14,13 @@ import com.cs.paint.service.ShapeService;
 import com.cs.paint.service.creator.impl.CanvasService;
 import com.cs.paint.service.creator.impl.LineService;
 
-public class LineCreationServiceTest {
+/**
+ * Single Responsibility purpose: To test the LineService.java 
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ * 
+ */
+public class LineServiceTest {
 
 	private ShapeService line;
 	

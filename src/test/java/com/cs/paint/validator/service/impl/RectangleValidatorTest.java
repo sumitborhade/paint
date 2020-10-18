@@ -15,7 +15,13 @@ import com.cs.paint.service.ValidatorService;
 import com.cs.paint.service.creator.impl.CanvasService;
 import com.cs.paint.service.validator.impl.RectangleValidator;
 
-public class RectangleValidationTest {
+/**
+ * Single Responsibility purpose: To test RectangleValidator.java 
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ * 
+ */
+public class RectangleValidatorTest {
 
 	private ValidatorService rectangleValidation;
 	

@@ -8,7 +8,13 @@ import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.factory.ShapeValidatorFactory;
 
-public class ValidationFactoryTest {
+/**
+ * Single Responsibility purpose: To test ShapeValidatorFactory.java
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ * 
+ */
+public class ShapeValidatorFactoryTest {
 
 	@Rule
 	public ExpectedException thrown = ExpectedException.none();

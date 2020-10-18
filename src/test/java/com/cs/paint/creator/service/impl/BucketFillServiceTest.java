@@ -12,7 +12,13 @@ import com.cs.paint.service.ShapeService;
 import com.cs.paint.service.creator.impl.BucketFillService;
 import com.cs.paint.service.creator.impl.CanvasService;
 
-public class BucketFillCreationServiceTest {
+/**
+ * Single Responsibility purpose: To test the BucketFillService.java
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ * 
+ */
+public class BucketFillServiceTest {
 
 	private ShapeService bucketFill;
 	

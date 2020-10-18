@@ -22,7 +22,7 @@ public class ProcessOrchestrator {
 		validationOrchestrator.performValidation(inputString);
 		
 		//2. Shape creation
-		ShapeCreationOrchestrator shapeCreationOrchestrator = new ShapeCreationOrchestrator();
+		ShapeCreatorOrchestrator shapeCreationOrchestrator = new ShapeCreatorOrchestrator();
 		boolean isShapeCreated = shapeCreationOrchestrator.createShape(inputString);
 		
 		return isShapeCreated;

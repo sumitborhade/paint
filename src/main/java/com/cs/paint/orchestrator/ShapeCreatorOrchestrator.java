@@ -11,7 +11,7 @@ import com.cs.paint.service.creator.impl.CanvasService;
  * 
  * @author Sumit Borhade (borhadesumit58@gmail.com)
  */
-public class ShapeCreationOrchestrator {
+public class ShapeCreatorOrchestrator {
 
 	/**
 	 * This method accepts the input string and splits it in input array.

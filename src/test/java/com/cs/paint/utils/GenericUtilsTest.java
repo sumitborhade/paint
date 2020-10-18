@@ -10,10 +10,16 @@ import org.junit.rules.ExpectedException;
 import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.model.PointModel;
-import com.cs.paint.orchestrator.ShapeCreationOrchestrator;
+import com.cs.paint.orchestrator.ShapeCreatorOrchestrator;
 import com.cs.paint.service.creator.impl.CanvasService;
 import com.cs.paint.utils.GenericUtils;
 
+/**
+ * Single Responsibility purpose: To test GenericUtils.java
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ * 
+ */
 public class GenericUtilsTest {
 
 	@Rule
@@ -48,7 +54,7 @@ public class GenericUtilsTest {
 	@Test
 	public void testCheckWhenThePointIsInsideCanvasThenPointIsInsideCanvasThenTrueShouldBeReturned() {
 		CanvasService.destroyCanvas();
-		ShapeCreationOrchestrator shapeCreationOrchestrator = new ShapeCreationOrchestrator();
+		ShapeCreatorOrchestrator shapeCreationOrchestrator = new ShapeCreatorOrchestrator();
 		shapeCreationOrchestrator.createShape("C 20 4");
 
 		PointModel point = new PointModel(2, 2);
@@ -58,7 +64,7 @@ public class GenericUtilsTest {
 	@Test
 	public void testCheckWhenThePointIsInsideCanvasThenPointIsOutsideCanvasThenFalseShouldBeReturned() {
 		CanvasService.destroyCanvas();
-		ShapeCreationOrchestrator shapeCreationOrchestrator = new ShapeCreationOrchestrator();
+		ShapeCreatorOrchestrator shapeCreationOrchestrator = new ShapeCreatorOrchestrator();
 		shapeCreationOrchestrator.createShape("C 20 4");
 
 		PointModel point = new PointModel(21, 5);
@@ -68,7 +74,7 @@ public class GenericUtilsTest {
 	@Test
 	public void testCheckWhenThePointIsInsideCanvasThenPointsAreOutsideCanvasThenFalseShouldBeReturned() {
 		CanvasService.destroyCanvas();
-		ShapeCreationOrchestrator shapeCreationOrchestrator = new ShapeCreationOrchestrator();
+		ShapeCreatorOrchestrator shapeCreationOrchestrator = new ShapeCreatorOrchestrator();
 		shapeCreationOrchestrator.createShape("C 20 4");
 
 		PointModel pointOne = new PointModel(0, 2);

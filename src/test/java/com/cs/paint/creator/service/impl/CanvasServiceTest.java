@@ -14,7 +14,13 @@ import com.cs.paint.exception.ApplicationExceptionCode;
 import com.cs.paint.exception.CustomException;
 import com.cs.paint.service.creator.impl.CanvasService;
 
-public class CanvasServiceImplTest {
+/**
+ * Single Responsibility purpose: To test the CanvasService.java 
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ * 
+ */
+public class CanvasServiceTest {
 
 	private CanvasService canvasService;
 

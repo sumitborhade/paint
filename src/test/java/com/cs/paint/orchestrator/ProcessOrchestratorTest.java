@@ -6,6 +6,12 @@ import org.junit.Test;
 
 import com.cs.paint.service.creator.impl.CanvasService;
 
+/**
+ * Single Responsibility purpose: To test ProcessOrchestrator.java
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ * 
+ */
 public class ProcessOrchestratorTest {
 
 	@Test

@@ -14,7 +14,13 @@ import com.cs.paint.service.ValidatorService;
 import com.cs.paint.service.creator.impl.CanvasService;
 import com.cs.paint.service.validator.impl.CanvasValidator;
 
-public class CanvasValidationTest {
+/**
+ * Single Responsibility purpose: To test CanvasValidator.java
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ * 
+ */
+public class CanvasValidatorTest {
 
 	private ValidatorService canvasValidation;
 

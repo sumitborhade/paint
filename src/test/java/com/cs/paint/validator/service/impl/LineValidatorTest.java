@@ -15,6 +15,12 @@ import com.cs.paint.service.ValidatorService;
 import com.cs.paint.service.creator.impl.CanvasService;
 import com.cs.paint.service.validator.impl.LineValidator;
 
+/**
+ * Single Responsibility purpose: To test LineValidator.java 
+ * 
+ * @author Sumit Borhade (borhadesumit58@gmail.com)
+ * 
+ */
 public class LineValidatorTest {
 
 	private ValidatorService lineValidator;
